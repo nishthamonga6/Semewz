@@ -80,7 +80,7 @@ export default function ProductCard({ product }) {
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
-                className={`h-8 text-xs font-medium rounded border transition-all ${
+                className={`h-6 text-[11px] font-medium rounded border transition-all ${
                   selectedSize === size
                     ? 'bg-semwz-black text-white border-semwz-black'
                     : 'bg-white text-semwz-black border-gray-300 hover:border-semwz-black'

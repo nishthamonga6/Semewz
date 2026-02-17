@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ShoppingBag, Search, Menu, X, LogOut, Home } from 'lucide-react'
+import { ShoppingBag, Search, Menu, X, LogOut, Home, Heart, User } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 
@@ -28,6 +28,8 @@ export default function Header() {
     { id: 'cordsets', label: 'Co-ord Sets' },
   ]
 
+  const primaryNav = []
+
   const sectionMap = {
     new: 'new-arrivals',
     jeans: 'jeans',
@@ -49,85 +51,80 @@ export default function Header() {
   return (
     <header className="navbar bg-semwz-peach">
       <div className="container mx-auto px-4 lg:px-8 py-2.5">
-        {/* Single Line Navbar - Desktop */}
-        <div className="hidden lg:flex items-center justify-between gap-6">
-          {/* Logo - Left with Hover Animation */}
-          <Link to="/" aria-label="Go to homepage">
-            <img src="/logo.png" alt="SEMWZ Logo" className="h-11 object-contain flex-shrink-0 transition-transform duration-300 hover:scale-110" />
-          </Link>
+        {/* Desktop Navbar - two rows: primary nav centered, subnav below */}
+        <div className="hidden lg:block">
+          <div className="flex items-center justify-between">
+            {/* Logo - Left */}
+            <Link to="/" aria-label="Go to homepage" className="flex-shrink-0">
+              <img src="/logo.png" alt="SEMWZ Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-105" />
+            </Link>
 
-          {/* Categories - Center */}
-          <nav className="flex items-center gap-6 flex-1 justify-center">
-            {categories.map(category => (
-              <button
-                key={category.id}
-                onClick={() => handleCategoryClick(category.id)}
-                className={`text-xs tracking-wide transition-all duration-300 font-medium relative group ${
-                  activeCategory === category.id
-                    ? 'text-semwz-black'
-                    : 'text-gray-700 hover:text-semwz-black'
-                }`}
-              >
-                {category.label}
+            {/* Center Search (fills vacant primary nav space) */}
+            <div className="flex-1 flex justify-center">
+              <form onSubmit={handleSearch} className="w-full lg:w-3/4 xl:w-2/3 flex items-center bg-white border border-semwz-black/10 rounded-full px-4 py-1.5 gap-3 shadow-sm">
+                <Search size={18} className="text-semwz-black/50" />
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  placeholder="Search products, categories, styles"
+                  className="bg-transparent text-sm focus:outline-none flex-1 text-semwz-black placeholder-semwz-black/40 px-2"
+                />
+                <button type="submit" className="text-sm bg-semwz-peach text-semwz-black px-4 py-1 rounded-full">Search</button>
+              </form>
+            </div>
+
+            {/* Icons - Right */}
+            <div className="flex items-center gap-5">
+            
+
+              <button className="text-semwz-black/80 hover:text-semwz-black">
+                <Heart size={18} />
               </button>
-            ))}
-          </nav>
 
-          {/* Search & Cart & Auth - Right */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            {/* Search Form */}
-            <form onSubmit={handleSearch} className="hidden lg:flex items-center bg-semwz-peach border border-semwz-black/10 rounded-lg px-3 py-1.5 gap-2">
-              <Search size={14} className="text-semwz-black/40" />
-              <input
-                type="text"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                placeholder="Search..."
-                className="bg-transparent text-xs focus:outline-none w-32 text-semwz-black placeholder-semwz-black/40"
-              />
-            </form>
+              <Link to="/cart" className="relative">
+                <ShoppingBag size={18} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
 
-            <Link to="/" className="hidden lg:flex items-center gap-2 text-xs font-medium text-semwz-black hover:opacity-80" aria-label="Home">
-              <Home size={16} />
-              <span>Home</span>
-            </Link>
-
-            <Link to="/cart" className="relative group">
-              <ShoppingBag size={16} />
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
-                  {cartCount}
-                </span>
+              {user ? (
+                <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
+                  <span className="text-sm font-medium text-semwz-black">{user.name}</span>
+                  <button onClick={logout} className="hover:text-gray-700 transition"><LogOut size={16} /></button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
+                  <Link to="/login" className="text-sm font-medium text-semwz-black hover:opacity-70">Sign In</Link>
+                  <Link to="/signup" className="text-sm font-medium bg-semwz-black text-white px-3 py-1 rounded-md">Sign Up</Link>
+                </div>
               )}
-            </Link>
+            </div>
+          </div>
 
-            {user ? (
-              <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
-                <span className="text-xs font-medium text-semwz-black">{user.name}</span>
-                <button
-                  onClick={logout}
-                  className="hover:text-gray-700 transition"
-                  title="Logout"
-                >
-                  <LogOut size={16} />
-                </button>
-              </div>
-            ) : (
-              <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
-                <Link
-                  to="/login"
-                  className="text-xs font-medium text-semwz-black hover:opacity-70 transition"
-                >
-                  Sign In
+          {/* Sub Navigation - centered (subcategory links + filter pills) */}
+          <div className="mt-3 subnav-row">
+            <div className="flex items-center justify-between">
+              <nav className="flex items-center gap-6">
+                <Link to="/" className="category-button text-sm" onClick={() => { setActiveCategory(''); }}>
+                  Home
                 </Link>
-                <Link
-                  to="/signup"
-                  className="text-xs font-medium bg-semwz-black text-white px-3 py-1.5 rounded-md hover:bg-semwz-black/90 transition"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            )}
+                {categories.map((c) => (
+                  <button
+                    key={c.id}
+                    onClick={() => handleCategoryClick(c.id)}
+                    className={`category-button ${activeCategory === c.id ? 'active' : ''} text-sm`}
+                  >
+                    {c.label}
+                  </button>
+                ))}
+              </nav>
+
+              <div />
+            </div>
           </div>
         </div>
 

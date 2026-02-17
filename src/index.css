@@ -127,6 +127,39 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
 }
 
+/* Primary nav buttons (UNIQLO-like) */
+.primary-nav-button {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #6b6b6b;
+  padding: 8px 6px;
+  background: transparent;
+}
+.primary-nav-button:hover {
+  color: #1a1a1a;
+}
+.primary-nav-button.active {
+  color: #1a1a1a;
+}
+
+/* Sub-navigation pills / filter chips */
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  font-size: 0.9rem;
+  color: #444;
+}
+.subnav-row {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 8px;
+}
+
 /* Section Heading Animations */
 .section-heading {
   font-family: 'Poppins', system-ui, sans-serif;

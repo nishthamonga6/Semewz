@@ -21,7 +21,7 @@ export default function ProductGrid({ products, title, subtitle, id }) {
         )}
 
         {/* Products Grid with Stagger Animation */}
-        <div className="product-grid grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="product-grid grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3">
           {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

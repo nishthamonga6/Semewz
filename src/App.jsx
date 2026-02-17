@@ -9,6 +9,10 @@ import Signup from './components/Signup'
 import Cart from './components/Cart'
 import Search from './components/Search'
 import CategoryPage from './pages/CategoryPage'
+import NewArrivalsPage from './pages/NewArrivalsPage'
+import JeansPage from './pages/JeansPage'
+import ShirtsPage from './pages/ShirtsPage'
+import CordsPage from './pages/CordsPage'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 import { products } from './data/products'
@@ -36,51 +40,12 @@ function HomePage() {
         <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-semwz-black/20 to-transparent"></div>
       </div>
 
-      {/* New Arrivals */}
-      <ProductGrid
-        products={products.new}
-        id="new-arrivals"
-        title="New Arrivals"
-        subtitle="Fresh pieces just dropped — explore what's new this season"
-      />
-
-      {/* Divider */}
-      <div className="py-0.5 flex items-center">
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-semwz-black/20 to-transparent"></div>
-      </div>
-
-      {/* Jeans Collection */}
-      <ProductGrid
-        products={products.jeans}
-        id="jeans"
-        title="Denim Essentials"
-        subtitle="Perfectly crafted jeans for every occasion and style"
-      />
-
-      {/* Divider */}
-      <div className="py-0.5 flex items-center">
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-semwz-black/20 to-transparent"></div>
-      </div>
-
       {/* Shirts Collection */}
       <ProductGrid
         products={products.shirts}
         id="shirts"
         title="Elevated Basics"
         subtitle="Premium quality shirts that define your everyday aesthetic"
-      />
-
-      {/* Divider */}
-      <div className="py-0.5 flex items-center">
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-semwz-black/20 to-transparent"></div>
-      </div>
-
-      {/* Coord Sets */}
-      <ProductGrid
-        products={products.cordsets}
-        id="co-ord-sets"
-        title="Co-ord Sets"
-        subtitle="Effortless matching pieces that take the guesswork out of getting dressed"
       />
 
       {/* Footer */}
@@ -112,7 +77,7 @@ function AppContent() {
         path="/new-arrivals"
         element={
           <PageLayout>
-            <CategoryPage staticSlug="new-arrivals" />
+            <NewArrivalsPage />
           </PageLayout>
         }
       />
@@ -120,7 +85,7 @@ function AppContent() {
         path="/jeans"
         element={
           <PageLayout>
-            <CategoryPage staticSlug="jeans" />
+            <JeansPage />
           </PageLayout>
         }
       />
@@ -128,7 +93,7 @@ function AppContent() {
         path="/shirts"
         element={
           <PageLayout>
-            <CategoryPage staticSlug="shirts" />
+            <ShirtsPage />
           </PageLayout>
         }
       />
@@ -136,7 +101,7 @@ function AppContent() {
         path="/co-ord-sets"
         element={
           <PageLayout>
-            <CategoryPage staticSlug="co-ord-sets" />
+            <CordsPage />
           </PageLayout>
         }
       />
