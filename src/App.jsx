@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import EditorialSection from './components/EditorialSection'
-import ProductGrid from './components/ProductGrid'
+import HomeSections from './components/HomeSections'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
@@ -15,8 +14,6 @@ import ShirtsPage from './pages/ShirtsPage'
 import CordsPage from './pages/CordsPage'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
-import { products } from './data/products'
-
 function PageLayout({ children }) {
   return (
     <>
@@ -32,21 +29,8 @@ function HomePage() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Editorial Section */}
-      <EditorialSection />
-
-      {/* Divider */}
-      <div className="py-0.5 flex items-center">
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-semwz-black/20 to-transparent"></div>
-      </div>
-
-      {/* Shirts Collection */}
-      <ProductGrid
-        products={products.shirts}
-        id="shirts"
-        title="Elevated Basics"
-        subtitle="Premium quality shirts that define your everyday aesthetic"
-      />
+      {/* Home sections - New Arrivals + Category tiles */}
+      <HomeSections />
 
       {/* Footer */}
       <Footer />

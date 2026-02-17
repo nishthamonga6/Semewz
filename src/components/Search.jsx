@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { Search as SearchIcon, ArrowLeft } from 'lucide-react'
 import ProductCard from './ProductCard'
@@ -10,7 +10,12 @@ export default function Search() {
   const query = searchParams.get('q') || ''
   const [localQuery, setLocalQuery] = useState(query)
 
-  // Combine all products and search
+  // Sync local input when URL query changes (e.g. from header search)
+  useEffect(() => {
+    setLocalQuery(query)
+  }, [query])
+
+  // Combine products from new arrivals, jeans, shirts, and co-ord sets only
   const allProducts = [
     ...products.new,
     ...products.jeans,

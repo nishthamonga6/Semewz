@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ShoppingBag, Search, Menu, X, LogOut, Home, Heart, User } from 'lucide-react'
+import { ShoppingBag, Search, Menu, X, LogOut, Heart } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 
 export default function Header() {
-  const [activeCategory, setActiveCategory] = useState('new')
+  const [activeCategory, setActiveCategory] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchInput, setSearchInput] = useState('')
   const { user, logout } = useAuth()
   const { getTotalItems } = useCart()
   const navigate = useNavigate()
+  const location = useLocation()
   const cartCount = getTotalItems()
 
   const handleSearch = (e) => {
@@ -22,36 +23,28 @@ export default function Header() {
   }
 
   const categories = [
-    { id: 'new', label: 'New Arrivals' },
-    { id: 'jeans', label: 'Jeans' },
-    { id: 'shirts', label: 'Shirts' },
-    { id: 'cordsets', label: 'Co-ord Sets' },
+    { id: 'new', label: 'New Arrivals', path: '/new-arrivals' },
+    { id: 'jeans', label: 'Jeans', path: '/jeans' },
+    { id: 'shirts', label: 'Shirts', path: '/shirts' },
+    { id: 'cordsets', label: 'Co-ord Sets', path: '/co-ord-sets' },
   ]
 
-  const primaryNav = []
-
   const sectionMap = {
-    new: 'new-arrivals',
-    jeans: 'jeans',
-    shirts: 'shirts',
-    cordsets: 'co-ord-sets',
+    new: '/new-arrivals',
+    jeans: '/jeans',
+    shirts: '/shirts',
+    cordsets: '/co-ord-sets',
   }
-
-  const location = useLocation()
 
   const handleCategoryClick = (id) => {
     setActiveCategory(id)
-    const targetId = sectionMap[id]
-    if (!targetId) return
-
-    // Navigate to the canonical short route for the category
-    navigate(`/${targetId}`)
+    navigate(sectionMap[id] || '/')
   }
 
   return (
-    <header className="navbar bg-semwz-peach">
+    <header className="navbar bg-semwz-peach sticky top-0 z-50">
       <div className="container mx-auto px-4 lg:px-8 py-2.5">
-        {/* Desktop Navbar - two rows: primary nav centered, subnav below */}
+        {/* Desktop Navbar */}
         <div className="hidden lg:block">
           <div className="flex items-center justify-between">
             {/* Logo - Left */}
@@ -59,7 +52,7 @@ export default function Header() {
               <img src="/logo.png" alt="SEMWZ Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-105" />
             </Link>
 
-            {/* Center Search (fills vacant primary nav space) */}
+            {/* Center Search */}
             <div className="flex-1 flex justify-center">
               <form onSubmit={handleSearch} className="w-full lg:w-3/4 xl:w-2/3 flex items-center bg-white border border-semwz-black/10 rounded-full px-4 py-1.5 gap-3 shadow-sm">
                 <Search size={18} className="text-semwz-black/50" />
@@ -76,14 +69,12 @@ export default function Header() {
 
             {/* Icons - Right */}
             <div className="flex items-center gap-5">
-            
-
               <button className="text-semwz-black/80 hover:text-semwz-black">
                 <Heart size={18} />
               </button>
 
               <Link to="/cart" className="relative">
-                <ShoppingBag size={18} />
+                <ShoppingBag size={18} className="text-semwz-black" />
                 {cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
                     {cartCount}
@@ -105,46 +96,39 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Sub Navigation - centered (subcategory links + filter pills) */}
+          {/* Sub Navigation */}
           <div className="mt-3 subnav-row">
             <div className="flex items-center justify-between">
               <nav className="flex items-center gap-6">
-                <Link to="/" className="category-button text-sm" onClick={() => { setActiveCategory(''); }}>
+                <Link to="/" className="category-button text-sm" onClick={() => setActiveCategory('')}>
                   Home
                 </Link>
                 {categories.map((c) => (
                   <button
                     key={c.id}
                     onClick={() => handleCategoryClick(c.id)}
-                    className={`category-button ${activeCategory === c.id ? 'active' : ''} text-sm`}
+                    className={`category-button ${location.pathname === c.path ? 'active' : ''} text-sm`}
                   >
                     {c.label}
                   </button>
                 ))}
               </nav>
-
-              <div />
             </div>
           </div>
         </div>
 
         {/* Mobile Navbar */}
         <div className="lg:hidden flex items-center justify-between">
-          {/* Menu Button */}
-          <button 
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={18} className="text-semwz-black" /> : <Menu size={18} className="text-semwz-black" />}
           </button>
 
-          {/* Logo */}
           <Link to="/" aria-label="Go to homepage">
             <img src="/logo.png" alt="SEMWZ Logo" className="h-10 object-contain" />
           </Link>
 
-          {/* Cart */}
           <Link to="/cart" className="relative group">
-            <ShoppingBag size={16} />
+            <ShoppingBag size={16} className="text-semwz-black" />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
                 {cartCount}
@@ -153,11 +137,10 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Navigation - Mobile */}
+        {/* Mobile Nav Dropdown */}
         {menuOpen && (
-          <nav className="lg:hidden flex flex-col gap-3 mt-2 pt-2 border-t border-semwz-black border-opacity-10">
-            {/* Mobile Search */}
-            <form onSubmit={handleSearch} className="flex items-center bg-semwz-peach border border-semwz-black/10 rounded-lg px-3 py-2 gap-2 mb-2">
+          <nav className="lg:hidden flex flex-col gap-3 mt-2 pt-2 border-t border-semwz-black/10">
+            <form onSubmit={handleSearch} className="flex items-center bg-white border border-semwz-black/10 rounded-lg px-3 py-2 gap-2 mb-2">
               <Search size={14} className="text-semwz-black/40" />
               <input
                 type="text"
@@ -168,25 +151,23 @@ export default function Header() {
               />
             </form>
 
-            {categories.map(category => (
+            <Link to="/" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">
+              Home
+            </Link>
+            {categories.map((c) => (
               <button
-                key={category.id}
+                key={c.id}
                 onClick={() => {
-                  handleCategoryClick(category.id)
+                  handleCategoryClick(c.id)
                   setMenuOpen(false)
                 }}
-                className={`text-left text-sm font-medium transition ${
-                  activeCategory === category.id
-                    ? 'text-semwz-black'
-                    : 'text-gray-700'
-                }`}
+                className="text-left text-sm font-medium text-semwz-black"
               >
-                {category.label}
+                {c.label}
               </button>
             ))}
 
-            {/* Mobile Auth Links */}
-            <div className="pt-2 border-t border-semwz-black border-opacity-10 flex flex-col gap-2">
+            <div className="pt-2 border-t border-semwz-black/10 flex flex-col gap-2">
               {user ? (
                 <>
                   <p className="text-xs font-medium text-semwz-black">{user.name}</p>
@@ -195,7 +176,7 @@ export default function Header() {
                       logout()
                       setMenuOpen(false)
                     }}
-                    className="text-left text-sm font-medium text-gray-700 hover:text-semwz-black transition flex items-center gap-2"
+                    className="text-left text-sm font-medium text-semwz-black flex items-center gap-2"
                   >
                     <LogOut size={14} />
                     Logout
@@ -203,17 +184,13 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <Link
-                    to="/login"
-                    onClick={() => setMenuOpen(false)}
-                    className="text-left text-sm font-medium text-gray-700 hover:text-semwz-black transition"
-                  >
+                  <Link to="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">
                     Sign In
                   </Link>
                   <Link
                     to="/signup"
                     onClick={() => setMenuOpen(false)}
-                    className="text-left text-sm font-medium bg-semwz-black text-white px-3 py-1.5 rounded-md hover:bg-semwz-black/90 transition inline-block w-fit"
+                    className="text-sm font-medium bg-semwz-black text-white px-3 py-1.5 rounded-md w-fit"
                   >
                     Sign Up
                   </Link>
