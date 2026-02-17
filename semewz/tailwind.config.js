@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'semwz-neutral': '#F5F0EA',
-        'semwz-peach': '#E8D5C4',
+        'semwz-peach': '#F2D3C5',
         'semwz-black': '#1a1a1a',
         'semwz-beige': '#E8DFD5',
         'semwz-white': '#FFFFFF',

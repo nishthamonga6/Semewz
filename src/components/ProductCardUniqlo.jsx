@@ -22,9 +22,9 @@ export default function ProductCardUniqlo({ product, variants }) {
   const isSale = product.stock === "Sale"
 
   return (
-    <div className="group bg-white/90 rounded-sm h-full flex flex-col border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all duration-300">
+    <div className="group bg-white rounded-sm h-full flex flex-col border border-transparent hover:border-gray-200 transition-all duration-200">
       {/* Product Image Container - Large & Prominent */}
-      <div className="relative overflow-hidden bg-gray-50 aspect-square mb-3">
+      <div className="relative overflow-hidden bg-gray-50 aspect-[3/4] mb-3">
         <img
           src={product.image}
           alt={product.name}
@@ -60,87 +60,46 @@ export default function ProductCardUniqlo({ product, variants }) {
       {/* Product Details */}
       <div className="px-2 pb-2 flex-grow flex flex-col">
         {/* Product Name */}
-        <p className="text-xs font-semibold text-gray-800 mb-0.5 line-clamp-2 leading-tight">
+        <p className="text-sm font-medium text-gray-900 mb-1 line-clamp-2 leading-tight">
           {product.name}
         </p>
 
-        {/* Size & Category Info */}
-        <p className="text-[9px] text-gray-500 mb-1">
-          Unisex, {product.sizes.join('-')}
-        </p>
-
-        {/* Color Swatches - Make them visible */}
+        {/* Color Swatches - compact */}
         {variants && variants.length > 0 && (
-          <div className="flex items-center gap-1 mb-1.5">
-            {variants.map((variant) => (
-              <button
-                key={variant.id}
-                onClick={() => setSelectedColor(variant.color)}
-                className={`w-4 h-4 rounded-full border-2 transition-all cursor-pointer ${
-                  selectedColor === variant.color
-                    ? 'border-gray-900 ring-2 ring-offset-1 ring-semwz-peach'
-                    : 'border-gray-300 hover:border-gray-500'
-                }`}
-                style={{ backgroundColor: variant.colorHex }}
-                title={variant.color}
-              />
-            ))}
+          <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-1">
+              {variants.map((variant) => (
+                <button
+                  key={variant.id}
+                  onClick={() => setSelectedColor(variant.color)}
+                  className={`w-3 h-3 rounded-full border-2 transition-all cursor-pointer ${
+                    selectedColor === variant.color
+                      ? 'border-gray-900 ring-2 ring-offset-1 ring-semwz-peach'
+                      : 'border-gray-300 hover:border-gray-500'
+                  }`}
+                  style={{ backgroundColor: variant.colorHex }}
+                  title={variant.color}
+                />
+              ))}
+            </div>
           </div>
         )}
 
-        {/* Price Section */}
-        <div className="mb-1 flex items-baseline gap-1">
+        {/* Price + Rating Row */}
+        <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-bold text-gray-900">
             Rs. {product.price.toLocaleString()}
           </span>
+          <span className="text-[10px] text-gray-600">{product.rating}★</span>
         </div>
 
-        {/* Sale Badge */}
-        {isSale && (
-          <p className="text-[9px] font-bold text-red-600 mb-1">
-            Sale
-          </p>
-        )}
-
-        {/* Rating */}
-        <div className="flex items-center gap-0.5 mb-1.5">
-          <div className="flex text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-[10px]">★</span>
-            ))}
-          </div>
-          <span className="text-[9px] text-gray-600">
-            {product.rating} ({product.reviews})
-          </span>
-        </div>
-
-        {/* Size Selector */}
-        <div className="mb-2">
-          <label className="text-[9px] font-semibold text-gray-700 block mb-0.5">
-            Size
-          </label>
-          <select
-            value={selectedSize}
-            onChange={(e) => setSelectedSize(e.target.value)}
-            className="w-full h-6 text-[9px] font-medium border border-gray-300 rounded px-1.5 bg-white hover:border-gray-400 focus:outline-none focus:border-gray-900"
-          >
-            <option value="">Select</option>
-            {product.sizes.map((size) => (
-              <option key={size} value={size}>
-                {size}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Add to Bag Button */}
+        {/* Compact Add to Bag */}
         <button
           onClick={handleAddToCart}
-          disabled={!selectedSize}
-          className={`w-full py-1 rounded-none text-[10px] font-semibold transition-all ${
+          className={`w-full py-1 rounded text-[11px] font-semibold transition-all ${
             addedToCart
               ? 'bg-green-500 text-white'
-              : 'bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-40 disabled:cursor-not-allowed'
+              : 'bg-gray-900 text-white hover:bg-gray-800'
           }`}
         >
           {addedToCart ? '✓ Added' : 'Add to Bag'}
