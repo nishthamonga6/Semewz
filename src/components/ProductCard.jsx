@@ -78,26 +78,26 @@ export default function ProductCard({ product }) {
       </div>
 
       {/* Product Info */}
-      <div className="p-4 lg:p-6">
-        <h3 className="text-sm lg:text-base font-semibold text-semwz-black mb-1 line-clamp-2">
+      <div className="p-3 lg:p-4">
+        <h3 className="text-sm lg:text-base font-semibold text-semwz-black mb-0.5 line-clamp-2">
           {product.name}
         </h3>
 
-        <p className="text-xs text-gray-600 mb-3">
+        <p className="text-xs text-gray-600 mb-1.5">
           {product.color}
         </p>
 
         {/* Price */}
-        <p className="text-lg font-bold text-semwz-black mb-4">
+        <p className="text-base font-bold text-semwz-black mb-2">
           ₹{product.price.toLocaleString()}
         </p>
 
         {/* Size Selector */}
-        <div className="mb-4">
-          <label className="text-xs font-semibold text-gray-700 block mb-2">
+        <div className="mb-2">
+          <label className="text-xs font-semibold text-gray-700 block mb-1">
             Size
           </label>
-          <div className="grid grid-cols-4 lg:grid-cols-5 gap-2">
+          <div className="grid grid-cols-4 lg:grid-cols-5 gap-1.5">
             {(product.sizes || []).map(size => (
               <button
                 key={size}
