@@ -24,12 +24,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Product Card - brand colors */
+/* Product Card - brand colors, render-friendly */
 .product-card {
   @apply relative overflow-hidden bg-white transition-all duration-500 ease-out rounded-2xl;
   animation: slideUpIn 0.6s ease-out;
   border: 1px solid rgba(232, 213, 196, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  contain: layout style;
 }
 
 .product-card:hover {

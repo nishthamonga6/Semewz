@@ -1,30 +1,34 @@
+import { memo, useState, useCallback } from 'react'
 import { ShoppingBag, Heart } from 'lucide-react'
-import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 import { useWishlist } from '../context/WishlistContext'
 import { useProductDetail } from '../context/ProductDetailContext'
 
-export default function ProductCard({ product }) {
-  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || '')
+function ProductCard({ product }) {
+  const [selectedSize, setSelectedSize] = useState(() => product.sizes?.[0] || '')
   const { addToCart } = useCart()
   const { isInWishlist, toggleWishlist } = useWishlist()
   const { openProduct } = useProductDetail()
 
-  const handleAddToCart = (e) => {
-    e.stopPropagation()
-    if (selectedSize) {
-      addToCart(product, selectedSize)
-    }
-  }
+  const handleAddToCart = useCallback(
+    (e) => {
+      e.stopPropagation()
+      if (selectedSize) addToCart(product, selectedSize)
+    },
+    [product, selectedSize, addToCart]
+  )
 
-  const handleWishlistClick = (e) => {
-    e.stopPropagation()
-    toggleWishlist(product)
-  }
+  const handleWishlistClick = useCallback(
+    (e) => {
+      e.stopPropagation()
+      toggleWishlist(product)
+    },
+    [product, toggleWishlist]
+  )
 
-  const handleCardClick = () => {
+  const handleCardClick = useCallback(() => {
     openProduct(product)
-  }
+  }, [product, openProduct])
 
   const isWishlisted = isInWishlist(product.id)
 
@@ -43,6 +47,8 @@ export default function ProductCard({ product }) {
           src={product.image}
           alt={product.name}
           className="product-image"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.target.src = 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=500&fit=crop'
           }}
@@ -122,3 +128,5 @@ export default function ProductCard({ product }) {
     </div>
   )
 }
+
+export default memo(ProductCard)

@@ -2,6 +2,9 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 import bcrypt from "bcryptjs"
+import path from "path"
+import { fileURLToPath } from "url"
+import fs from "fs"
 
 const app = express()
 
@@ -14,14 +17,23 @@ const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/semewz"
 /* =========================
    Middleware
 ========================= */
+const CORS_ORIGINS = (process.env.CORS_ORIGINS || "")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean)
+
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:5173"
-  ],
-  credentials: true
+  origin: (origin, cb) => {
+    // Allow same-origin / server-to-server / curl requests
+    if (!origin) return cb(null, true)
+
+    // If not configured, default-allow (useful for first deploys)
+    if (CORS_ORIGINS.length === 0) return cb(null, true)
+
+    return cb(null, CORS_ORIGINS.includes(origin))
+  },
+  // Frontend uses tokenless JSON fetches; no cookie auth needed.
+  credentials: false
 }))
 app.use(express.json())
 
@@ -307,6 +319,31 @@ app.get("/api/users/:userId", async (req, res) => {
     res.status(500).json({ message: "Failed to fetch user" })
   }
 })
+
+/* =========================
+   Optional: Serve Frontend
+========================= */
+if (process.env.NODE_ENV === "production") {
+  const __filename = fileURLToPath(import.meta.url)
+  const __dirname = path.dirname(__filename)
+  const distPath = path.resolve(__dirname, "..", "dist")
+  const indexHtmlPath = path.join(distPath, "index.html")
+
+  // Serve static assets only if a frontend build exists.
+  // (Important: Render web services health-check `/` by default.)
+  if (fs.existsSync(indexHtmlPath)) {
+    app.use(express.static(distPath))
+
+    // SPA fallback (must be AFTER /api routes)
+    app.get("*", (req, res) => {
+      res.sendFile(indexHtmlPath)
+    })
+  } else {
+    app.get("/", (req, res) => {
+      res.status(200).send("Semewz API is running.")
+    })
+  }
+}
 
 /* =========================
    Start Server AFTER DB
