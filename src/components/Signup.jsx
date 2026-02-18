@@ -10,10 +10,10 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [agreeTerms, setAgreeTerms] = useState(false)
-  const { signup, isLoading } = useAuth()
+  const { signup, isLoading, authError } = useAuth()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
@@ -37,7 +37,13 @@ export default function Signup() {
       return
     }
 
-    signup({ fullName, email, password })
+    const result = await signup({ fullName, email, password })
+
+    if (!result.success) {
+      setError(result.message || 'Failed to create account')
+      return
+    }
+
     navigate('/')
   }
 
@@ -56,9 +62,9 @@ export default function Signup() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
-            {error && (
+            {(error || authError) && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
+                <p className="text-red-600 text-sm">{error || authError}</p>
               </div>
             )}
 

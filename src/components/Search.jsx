@@ -80,7 +80,7 @@ export default function Search() {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="product-grid">
+          <div className="product-grid grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {filteredProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}

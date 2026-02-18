@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Mail, Lock, LogIn } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
@@ -7,10 +7,12 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const { login, isLoading } = useAuth()
+  const { login, isLoading, authError } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from || '/'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
@@ -19,8 +21,14 @@ export default function Login() {
       return
     }
 
-    login({ email, password })
-    navigate('/')
+    const result = await login({ email, password })
+
+    if (!result.success) {
+      setError(result.message || 'Failed to sign in')
+      return
+    }
+
+    navigate(from, { replace: true })
   }
 
   return (
@@ -38,9 +46,9 @@ export default function Login() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {error && (
+            {(error || authError) && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
+                <p className="text-red-600 text-sm">{error || authError}</p>
               </div>
             )}
 

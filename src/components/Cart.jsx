@@ -168,9 +168,12 @@ export default function Cart() {
               </div>
 
               {/* Checkout Button */}
-              <button className="w-full py-3 bg-semwz-black text-white font-semibold rounded-lg hover:bg-semwz-black/90 transition-all duration-300 hover:shadow-lg mb-3">
+              <Link
+                to="/checkout"
+                className="w-full py-3 bg-semwz-black text-white font-semibold rounded-lg hover:bg-semwz-black/90 transition-all duration-300 hover:shadow-lg mb-3 inline-block text-center"
+              >
                 Proceed to Checkout
-              </button>
+              </Link>
 
               {/* Continue Shopping */}
               <Link

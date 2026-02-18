@@ -7,13 +7,19 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Cart from './components/Cart'
 import Search from './components/Search'
+import Wishlist from './components/Wishlist'
 import CategoryPage from './pages/CategoryPage'
 import NewArrivalsPage from './pages/NewArrivalsPage'
 import JeansPage from './pages/JeansPage'
 import ShirtsPage from './pages/ShirtsPage'
 import CordsPage from './pages/CordsPage'
+import Checkout from './pages/Checkout'
+import OrderSuccess from './pages/OrderSuccess'
+import Orders from './pages/Orders'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
+import { WishlistProvider } from './context/WishlistContext'
+import { ProductDetailProvider } from './context/ProductDetailContext'
 function PageLayout({ children }) {
   return (
     <>
@@ -99,11 +105,22 @@ function AppContent() {
           </PageLayout>
         }
       />
+      <Route path="/checkout" element={<PageLayout><Checkout /></PageLayout>} />
+      <Route path="/order-success" element={<OrderSuccess />} />
+      <Route path="/orders" element={<PageLayout><Orders /></PageLayout>} />
       <Route
         path="/search"
         element={
           <PageLayout>
             <Search />
+          </PageLayout>
+        }
+      />
+      <Route
+        path="/wishlist"
+        element={
+          <PageLayout>
+            <Wishlist />
           </PageLayout>
         }
       />
@@ -116,9 +133,13 @@ function App() {
     <Router>
       <AuthProvider>
         <CartProvider>
-          <div className="w-full min-h-screen bg-semwz-peach">
-            <AppContent />
-          </div>
+          <WishlistProvider>
+            <ProductDetailProvider>
+              <div className="w-full min-h-screen bg-semwz-peach">
+                <AppContent />
+              </div>
+            </ProductDetailProvider>
+          </WishlistProvider>
         </CartProvider>
       </AuthProvider>
     </Router>

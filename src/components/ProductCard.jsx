@@ -1,21 +1,42 @@
 import { ShoppingBag, Heart } from 'lucide-react'
 import { useState } from 'react'
+import { useCart } from '../context/CartContext'
+import { useWishlist } from '../context/WishlistContext'
+import { useProductDetail } from '../context/ProductDetailContext'
 
 export default function ProductCard({ product }) {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2] || '')
-  const [isWishlisted, setIsWishlisted] = useState(false)
-  const [showQuickView, setShowQuickView] = useState(false)
+  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || '')
+  const { addToCart } = useCart()
+  const { isInWishlist, toggleWishlist } = useWishlist()
+  const { openProduct } = useProductDetail()
 
   const handleAddToCart = (e) => {
-    e.preventDefault()
+    e.stopPropagation()
     if (selectedSize) {
-      console.log(`Added ${product.name} in size ${selectedSize} to cart`)
-      // Add cart logic here
+      addToCart(product, selectedSize)
     }
   }
 
+  const handleWishlistClick = (e) => {
+    e.stopPropagation()
+    toggleWishlist(product)
+  }
+
+  const handleCardClick = () => {
+    openProduct(product)
+  }
+
+  const isWishlisted = isInWishlist(product.id)
+
   return (
-    <div className="group product-card">
+    <div
+      className="group product-card cursor-pointer"
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && handleCardClick()}
+      aria-label={`View ${product.name}`}
+    >
       {/* Image Container */}
       <div className="product-image-wrapper">
         <img
@@ -39,8 +60,9 @@ export default function ProductCard({ product }) {
               Add to Bag
             </button>
             <button
-              onClick={() => setIsWishlisted(!isWishlisted)}
+              onClick={handleWishlistClick}
               className="button border-2 border-white text-white hover:bg-white hover:text-black px-4 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
             >
               <Heart size={16} fill={isWishlisted ? 'white' : 'none'} className="transition-all duration-300" />
             </button>
@@ -60,7 +82,7 @@ export default function ProductCard({ product }) {
         <h3 className="text-sm lg:text-base font-semibold text-semwz-black mb-1 line-clamp-2">
           {product.name}
         </h3>
-        
+
         <p className="text-xs text-gray-600 mb-3">
           {product.color}
         </p>
@@ -76,10 +98,10 @@ export default function ProductCard({ product }) {
             Size
           </label>
           <div className="grid grid-cols-4 lg:grid-cols-5 gap-2">
-            {product.sizes.map(size => (
+            {(product.sizes || []).map(size => (
               <button
                 key={size}
-                onClick={() => setSelectedSize(size)}
+                onClick={(e) => { e.stopPropagation(); setSelectedSize(size) }}
                 className={`h-6 text-[11px] font-medium rounded border transition-all ${
                   selectedSize === size
                     ? 'bg-semwz-black text-white border-semwz-black'

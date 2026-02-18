@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ShoppingBag, Search, Menu, X, LogOut, Heart } from 'lucide-react'
+import { ShoppingBag, Search, Menu, X, LogOut, Heart, Package } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 
@@ -69,9 +69,9 @@ export default function Header() {
 
             {/* Icons - Right */}
             <div className="flex items-center gap-5">
-              <button className="text-semwz-black/80 hover:text-semwz-black">
+              <Link to="/wishlist" className="text-semwz-black/80 hover:text-semwz-black" aria-label="Wishlist">
                 <Heart size={18} />
-              </button>
+              </Link>
 
               <Link to="/cart" className="relative">
                 <ShoppingBag size={18} className="text-semwz-black" />
@@ -84,7 +84,8 @@ export default function Header() {
 
               {user ? (
                 <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
-                  <span className="text-sm font-medium text-semwz-black">{user.name}</span>
+                  <Link to="/orders" className="text-sm font-medium text-semwz-black hover:opacity-70">My Orders</Link>
+                  <span className="text-sm font-medium text-semwz-black">{user.fullName}</span>
                   <button onClick={logout} className="hover:text-gray-700 transition"><LogOut size={16} /></button>
                 </div>
               ) : (
@@ -154,6 +155,16 @@ export default function Header() {
             <Link to="/" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">
               Home
             </Link>
+            <Link to="/wishlist" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black flex items-center gap-2">
+              <Heart size={14} />
+              Wishlist
+            </Link>
+            {user && (
+              <Link to="/orders" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black flex items-center gap-2">
+                <Package size={14} />
+                My Orders
+              </Link>
+            )}
             {categories.map((c) => (
               <button
                 key={c.id}
@@ -170,7 +181,7 @@ export default function Header() {
             <div className="pt-2 border-t border-semwz-black/10 flex flex-col gap-2">
               {user ? (
                 <>
-                  <p className="text-xs font-medium text-semwz-black">{user.name}</p>
+                  <p className="text-xs font-medium text-semwz-black">{user.fullName}</p>
                   <button
                     onClick={() => {
                       logout()
