@@ -3,7 +3,7 @@ import ProductCard from './ProductCard'
 import { products } from '../data/products'
 
 export default function HomeSections() {
-  const newArrivals = products.new.slice(0, 8)
+  const newArrivals = products.new.slice(0, 6)
   const categories = [
     {
       id: 'jeans',
@@ -22,6 +22,12 @@ export default function HomeSections() {
       title: 'Co-ord Sets',
       image: 'https://images.unsplash.com/photo-1624529888383-79249e5c1c21?w=600&h=800&fit=crop',
       path: '/co-ord-sets',
+    },
+    {
+      id: 'newarrivals',
+      title: 'New Arrivals',
+      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop',
+      path: '/new-arrivals',
     },
   ]
 
@@ -54,7 +60,7 @@ export default function HomeSections() {
         </div>
       </section>
 
-      {/* Category Tiles - Shop by category */}
+      {/* Category Tiles - Shop by category */}2 lg:grid-cols-4
       <section className="py-16 lg:py-24 border-b border-semwz-black/10">
         <div className="container mx-auto px-4 lg:px-8">
           <h2 className="text-2xl lg:text-3xl font-light tracking-tight text-semwz-black mb-12">

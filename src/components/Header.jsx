@@ -1,18 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ShoppingBag, Search, Menu, X, LogOut, Heart, Package } from 'lucide-react'
-import { useAuth } from '../context/AuthContext'
-import { useCart } from '../context/CartContext'
+import { Search, Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [activeCategory, setActiveCategory] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchInput, setSearchInput] = useState('')
-  const { user, logout } = useAuth()
-  const { getTotalItems } = useCart()
   const navigate = useNavigate()
   const location = useLocation()
-  const cartCount = getTotalItems()
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -68,33 +63,7 @@ export default function Header() {
             </div>
 
             {/* Icons - Right */}
-            <div className="flex items-center gap-5">
-              <Link to="/wishlist" className="text-semwz-black/80 hover:text-semwz-black" aria-label="Wishlist">
-                <Heart size={18} />
-              </Link>
-
-              <Link to="/cart" className="relative">
-                <ShoppingBag size={18} className="text-semwz-black" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
-
-              {user ? (
-                <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
-                  <Link to="/orders" className="text-sm font-medium text-semwz-black hover:opacity-70">My Orders</Link>
-                  <span className="text-sm font-medium text-semwz-black">{user.fullName}</span>
-                  <button onClick={logout} className="hover:text-gray-700 transition"><LogOut size={16} /></button>
-                </div>
-              ) : (
-                <div className="flex items-center gap-3 pl-3 border-l border-semwz-black/15">
-                  <Link to="/login" className="text-sm font-medium text-semwz-black hover:opacity-70">Sign In</Link>
-                  <Link to="/signup" className="text-sm font-medium bg-semwz-black text-white px-3 py-1 rounded-md">Sign Up</Link>
-                </div>
-              )}
-            </div>
+            <div className="flex items-center gap-5" />
           </div>
 
           {/* Sub Navigation */}
@@ -128,14 +97,7 @@ export default function Header() {
             <img src="/logo.png" alt="SEMWZ Logo" className="h-10 object-contain" />
           </Link>
 
-          <Link to="/cart" className="relative group">
-            <ShoppingBag size={16} className="text-semwz-black" />
-            {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-semwz-black text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
-                {cartCount}
-              </span>
-            )}
-          </Link>
+          <div className="w-6" />
         </div>
 
         {/* Mobile Nav Dropdown */}
@@ -155,16 +117,6 @@ export default function Header() {
             <Link to="/" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">
               Home
             </Link>
-            <Link to="/wishlist" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black flex items-center gap-2">
-              <Heart size={14} />
-              Wishlist
-            </Link>
-            {user && (
-              <Link to="/orders" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black flex items-center gap-2">
-                <Package size={14} />
-                My Orders
-              </Link>
-            )}
             {categories.map((c) => (
               <button
                 key={c.id}
@@ -177,37 +129,6 @@ export default function Header() {
                 {c.label}
               </button>
             ))}
-
-            <div className="pt-2 border-t border-semwz-black/10 flex flex-col gap-2">
-              {user ? (
-                <>
-                  <p className="text-xs font-medium text-semwz-black">{user.fullName}</p>
-                  <button
-                    onClick={() => {
-                      logout()
-                      setMenuOpen(false)
-                    }}
-                    className="text-left text-sm font-medium text-semwz-black flex items-center gap-2"
-                  >
-                    <LogOut size={14} />
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">
-                    Sign In
-                  </Link>
-                  <Link
-                    to="/signup"
-                    onClick={() => setMenuOpen(false)}
-                    className="text-sm font-medium bg-semwz-black text-white px-3 py-1.5 rounded-md w-fit"
-                  >
-                    Sign Up
-                  </Link>
-                </>
-              )}
-            </div>
           </nav>
         )}
       </div>

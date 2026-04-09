@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-medium tracking-widest mb-4">SEMWZ</h3>
+            <h3 className="text-lg font-medium tracking-widest mb-4">SEMEWZ</h3>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Curated fashion for the modern individual. Premium quality, thoughtful design.
             </p>

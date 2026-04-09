@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { X, Heart, ShoppingBag, Ruler } from 'lucide-react'
-import { useCart } from '../context/CartContext'
-import { useWishlist } from '../context/WishlistContext'
+import { X, Ruler } from 'lucide-react'
 
 const SIZE_CHART = [
   { size: 'XS', chest: '81-86', waist: '61-66', hip: '86-91', length: '64' },
@@ -15,23 +13,8 @@ const SIZE_CHART = [
 export default function ProductDetailModal({ product, onClose }) {
   const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || '')
   const [showSizeChart, setShowSizeChart] = useState(false)
-  const { addToCart } = useCart()
-  const { isInWishlist, toggleWishlist } = useWishlist()
 
   if (!product) return null
-
-  const handleAddToCart = (e) => {
-    e.stopPropagation()
-    if (selectedSize) {
-      addToCart(product, selectedSize)
-      onClose()
-    }
-  }
-
-  const handleWishlist = (e) => {
-    e.stopPropagation()
-    toggleWishlist(product)
-  }
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true">
@@ -69,9 +52,6 @@ export default function ProductDetailModal({ product, onClose }) {
             {product.name}
           </h2>
           <p className="text-semwz-black/60 text-sm mb-2">{product.color}</p>
-          <p className="text-2xl font-bold text-semwz-black mb-4">
-            ₹{product.price?.toLocaleString()}
-          </p>
           <p className="text-sm text-gray-600 mb-6">{product.description}</p>
 
           {/* Size */}
@@ -132,25 +112,6 @@ export default function ProductDetailModal({ product, onClose }) {
             </div>
           )}
 
-          <div className="flex gap-3 mt-auto pt-6">
-            <button
-              type="button"
-              onClick={handleAddToCart}
-              disabled={!selectedSize}
-              className="flex-1 py-3 bg-semwz-black text-white font-semibold rounded-lg hover:bg-semwz-black/90 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
-            >
-              <ShoppingBag size={20} />
-              Add to Bag
-            </button>
-            <button
-              type="button"
-              onClick={handleWishlist}
-              className="py-3 px-5 border-2 border-semwz-black text-semwz-black font-semibold rounded-lg hover:bg-semwz-peach/30 transition-all duration-300 flex items-center justify-center"
-              aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
-            >
-              <Heart size={20} fill={isInWishlist(product.id) ? 'currentColor' : 'none'} />
-            </button>
-          </div>
         </div>
       </div>
     </div>
