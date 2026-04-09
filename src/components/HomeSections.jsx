@@ -4,32 +4,6 @@ import { products } from '../data/products'
 
 export default function HomeSections() {
   const newArrivals = products.new.slice(0, 6)
-  const categories = [
-    {
-      id: 'jeans',
-      title: 'Jeans',
-      image: 'https://images.unsplash.com/photo-1541099649105-1e1f5a6d5f8c?w=600&h=800&fit=crop',
-      path: '/jeans',
-    },
-    {
-      id: 'shirts',
-      title: 'Shirts',
-      image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop',
-      path: '/shirts',
-    },
-    {
-      id: 'cordsets',
-      title: 'Co-ord Sets',
-      image: 'https://images.unsplash.com/photo-1624529888383-79249e5c1c21?w=600&h=800&fit=crop',
-      path: '/co-ord-sets',
-    },
-    {
-      id: 'newarrivals',
-      title: 'New Arrivals',
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop',
-      path: '/new-arrivals',
-    },
-  ]
 
   return (
     <div className="bg-semwz-peach">
@@ -60,35 +34,58 @@ export default function HomeSections() {
         </div>
       </section>
 
-      {/* Category Tiles - Shop by category */}2 lg:grid-cols-4
+      {/* Category Preview Sections */}
       <section className="py-16 lg:py-24 border-b border-semwz-black/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="text-2xl lg:text-3xl font-light tracking-tight text-semwz-black mb-12">
-            Shop by Category
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {categories.map((cat) => (
-              <Link
-                key={cat.id}
-                to={cat.path}
-                className="group relative aspect-[3/4] overflow-hidden bg-neutral-100"
-              >
-                <img
-                  src={cat.image}
-                  alt={cat.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <h3 className="text-xl font-medium text-white tracking-wide">
-                    {cat.title}
-                  </h3>
-                  <span className="text-sm text-white/90 mt-1 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Shop now
-                    <span className="text-white">→</span>
-                  </span>
+          <div className="grid gap-16">
+            {[
+              {
+                id: 'jeans',
+                title: 'Jeans',
+                subtitle: 'Explore our latest denim styles in every fit.',
+                path: '/jeans',
+                products: products.jeans.slice(0, 3),
+              },
+              {
+                id: 'shirts',
+                title: 'Shirts',
+                subtitle: 'Fresh shirt drops that make every outfit sharper.',
+                path: '/shirts',
+                products: products.shirts.slice(0, 3),
+              },
+              {
+                id: 'cordsets',
+                title: 'Co-ord Sets',
+                subtitle: 'Complete matching sets for an effortless styled look.',
+                path: '/co-ord-sets',
+                products: products.cordsets.slice(0, 3),
+              },
+            ].map((section) => (
+              <div key={section.id} className="space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                  <div>
+                    <h2 className="text-2xl lg:text-3xl font-light tracking-tight text-semwz-black">
+                      {section.title}
+                    </h2>
+                    <p className="mt-2 text-semwz-black/60 text-sm max-w-xl">
+                      {section.subtitle}
+                    </p>
+                  </div>
+                  <Link
+                    to={section.path}
+                    className="inline-flex items-center justify-center rounded-full border border-semwz-black px-5 py-3 text-sm font-medium text-semwz-black transition hover:bg-semwz-black/5"
+                  >
+                    View More
+                    <span className="ml-2">→</span>
+                  </Link>
                 </div>
-              </Link>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {section.products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

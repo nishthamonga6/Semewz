@@ -609,16 +609,16 @@ export const products = {
     },
     {
       id: 71,
-      name: "Co-ord Set 41",
+      name: "Collar Charm",
       image: "/Pics/41.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Purple"
     },
     {
       id: 72,
-      name: "Co-ord Set 42",
+      name: "Sunflower Soul",
       image: "/Pics/42.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
@@ -627,678 +627,678 @@ export const products = {
     },
     {
       id: 73,
-      name: "Co-ord Set 43",
+      name: "Sunflower Soul",
       image: "/Pics/43.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "White"
+    },
+    {
+      id: 74,
+      name: "Sunflower Soul",
+      image: "/Pics/44.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Black"
+    },
+    {
+      id: 75,
+      name: "Sunflower Soul",
+      image: "/Pics/45.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Black"
+    },
+    {
+      id: 76,
+      name: "Smart Linen",
+      image: "/Pics/46.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Beige"
     },
-    {
-      id: 74,
-      name: "Co-ord Set 44",
-      image: "/Pics/44.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 75,
-      name: "Co-ord Set 45",
-      image: "/Pics/45.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
-    },
-    {
-      id: 76,
-      name: "Co-ord Set 46",
-      image: "/Pics/46.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
+    // {
+    //   id: 77,
+    //   name: "Smart Linen",
+    //   image: "/Pics/47.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Beige"
+    // },
     {
       id: 77,
-      name: "Co-ord Set 47",
-      image: "/Pics/47.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
-    },
-    {
-      id: 78,
-      name: "Co-ord Set 48",
+      name: "Up in the sky",
       image: "/Pics/48.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Navy"
     },
+    // {
+    //   id: 79,
+    //   name: "Co-ord Set 49",
+    //   image: "/Pics/49.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Khaki"
+    // },
+    // {
+    //   id: 80,
+    //   name: "Co-ord Set 50",
+    //   image: "/Pics/50.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Sand"
+    // },
+    // {
+    //   id: 81,
+    //   name: "Co-ord Set 51",
+    //   image: "/Pics/51.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Black"
+    // },
+    // {
+    //   id: 82,
+    //   name: "Co-ord Set 52",
+    //   image: "/Pics/52.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "White"
+    // },
     {
-      id: 79,
-      name: "Co-ord Set 49",
-      image: "/Pics/49.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
-    },
-    {
-      id: 80,
-      name: "Co-ord Set 50",
-      image: "/Pics/50.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
-    },
-    {
-      id: 81,
-      name: "Co-ord Set 51",
-      image: "/Pics/51.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
-    },
-    {
-      id: 82,
-      name: "Co-ord Set 52",
-      image: "/Pics/52.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
-    },
-    {
-      id: 83,
-      name: "Co-ord Set 53",
+      id: 78,
+      name: "White Maze",
       image: "/Pics/53.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "White"
     },
+    // {
+    //   id: 84,
+    //   name: "Co-ord Set 54",
+    //   image: "/Pics/54.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Cream"
+    // },
     {
-      id: 84,
-      name: "Co-ord Set 54",
-      image: "/Pics/54.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 85,
-      name: "Co-ord Set 55",
+      id: 79,
+      name: "Dry Ice",
       image: "/Pics/55.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
+      color: "Blue"
     },
+    // {
+    //   id: 86,
+    //   name: "Co-ord Set 56",
+    //   image: "/Pics/56.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Olive"
+    // },
     {
-      id: 86,
-      name: "Co-ord Set 56",
-      image: "/Pics/56.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
-    {
-      id: 87,
-      name: "Co-ord Set 57",
+      id: 80,
+      name: "Dreamy",
       image: "/Pics/57.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
+      color: "Butter Yellow"
     },
+    // {
+    //   id: 88,
+    //   name: "Co-ord Set 58",
+    //   image: "/Pics/58.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Navy"
+    // },
     {
-      id: 88,
-      name: "Co-ord Set 58",
-      image: "/Pics/58.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
-    },
-    {
-      id: 89,
-      name: "Co-ord Set 59",
+      id: 81,
+      name: "Live in the Grey",
       image: "/Pics/59.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
+      color: "Grey"
     },
+    // {
+    //   id: 90,
+    //   name: "Co-ord Set 60",
+    //   image: "/Pics/60.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Sand"
+    // },
     {
-      id: 90,
-      name: "Co-ord Set 60",
-      image: "/Pics/60.JPG",
+      id: 82,
+      name: "Live in the Grey",
+      image: "/Pics/61.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
+      color: "Silver"
+    },
+    // {
+    //   id: 92,
+    //   name: "Co-ord Set 62",
+    //   image: "/Pics/62.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "White"
+    // },
+    {
+      id: 83,
+      name: "I love Embroidery",
+      image: "/Pics/63.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Pink"
+    },
+
+    
+    // {
+    //   id: 94,
+    //   name: "Co-ord Set 64",
+    //   image: "/Pics/64.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Cream"
+    // },
+    {
+      id: 84,
+      name: "I love Embroidery",
+      image: "/Pics/65.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Dark Grey"
     },
     {
-      id: 91,
-      name: "Co-ord Set 61",
-      image: "/Pics/61.JPG",
+      id: 85,
+      name: "Butter me up",
+      image: "/Pics/66.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Butter Yellow"
+    },
+    {
+      id: 86,
+      name: "The Bloom",
+      image: "/Pics/67.JPG",
+      category: "shirts",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Navy Blue"
+    },
+    {
+      id: 87,
+      name: "Bloom in the Black",
+      image: "/Pics/68.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Black"
     },
+    // {
+    //   id: 99,
+    //   name: "Co-ord Set 69",
+    //   image: "/Pics/69.JPG",
+    //   category: "shirts",
+    //   sizes: ["M - XXL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Khaki"
+    // },
     {
-      id: 92,
-      name: "Co-ord Set 62",
-      image: "/Pics/62.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
-    },
-    {
-      id: 93,
-      name: "Co-ord Set 63",
-      image: "/Pics/63.JPG",
+      id: 88,
+      name: "Butter me up",
+      image: "/Pics/70.JPG",
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Beige"
     },
-
-    
     {
-      id: 94,
-      name: "Co-ord Set 64",
-      image: "/Pics/64.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 95,
-      name: "Co-ord Set 65",
-      image: "/Pics/65.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
-    },
-    {
-      id: 96,
-      name: "Co-ord Set 66",
-      image: "/Pics/66.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
-    {
-      id: 97,
-      name: "Co-ord Set 67",
-      image: "/Pics/67.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
-    },
-    {
-      id: 98,
-      name: "Co-ord Set 68",
-      image: "/Pics/68.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
-    },
-    {
-      id: 99,
-      name: "Co-ord Set 69",
-      image: "/Pics/69.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
-    },
-    {
-      id: 100,
-      name: "Co-ord Set 70",
-      image: "/Pics/70.JPG",
-      category: "shirts",
-      sizes: ["M - XXL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
-    },
-    {
-      id: 101,
-      name: "Co-ord Set 71",
+      id: 89,
+      name: "Denim Elite",
       image: "/Pics/71.JPG",
       category: "shirts",
-      sizes: ["M - XXL"],
+      sizes: ["Free size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Dark Blue"
     },
 
     {
-      id: 102,
-      name: "Co-ord Set 72",
+      id: 90,
+      name: "Denim Elite",
       image: "/Pics/72.JPG",
       category: "shirts",
-      sizes: ["M - XXL"],
+      sizes: ["Free size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "Light Blue"
     },
   ],
   cordsets: [
     {
       id: 191,
-      name: "Co-ord Set 1",
-      price: 2499,
+      name: "Nature’s Call",
+      price: 1273,
       image: "/Pics/1.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "White"
     },
     {
       id: 192,
-      name: "Co-ord Set 2",
-      price: 2699,
+      name: "Nature’s Call",
+      price: 1273,
       image: "/Pics/2.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "Bottle Green"
     },
     {
       id: 193,
-      name: "Co-ord Set 3",
-      price: 2899,
+      name: "Plain Crashed Co-ord",
+      price: 1323,
       image: "/Pics/3.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
-    },
-    {
-      id: 194,
-      name: "Co-ord Set 4",
-      price: 3199,
-      image: "/Pics/4.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 195,
-      name: "Co-ord Set 5",
-      price: 3499,
-      image: "/Pics/5.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
-    },
-    {
-      id: 196,
-      name: "Co-ord Set 6",
-      price: 3999,
-      image: "/Pics/6.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
-    {
-      id: 197,
-      name: "Co-ord Set 7",
-      price: 4299,
-      image: "/Pics/7.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
-    },
-    {
-      id: 198,
-      name: "Co-ord Set 8",
-      price: 4599,
-      image: "/Pics/8.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
-    },
-    {
-      id: 199,
-      name: "Co-ord Set 9",
-      price: 2499,
-      image: "/Pics/9.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
-    },
-    {
-      id: 200,
-      name: "Co-ord Set 10",
-      price: 2699,
-      image: "/Pics/10.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
-    },
-    {
-      id: 201,
-      name: "Co-ord Set 11",
-      price: 2899,
-      image: "/Pics/11.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Black"
     },
     {
-      id: 202,
-      name: "Co-ord Set 12",
-      price: 3199,
-      image: "/Pics/12.JPG",
+      id: 194,
+      name: "Plain Crashed Co-ord",
+      price: 1323,
+      image: "/Pics/4.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Mauve"
+    },
+    {
+      id: 195,
+      name: "Plain Crashed Co-ord",
+      price: 1323,
+      image: "/Pics/5.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Baby Pink"
+    },
+    {
+      id: 196,
+      name: "Plain Crashed Co-ord",
+      price: 1323,
+      image: "/Pics/6.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Green"
+    },
+    {
+      id: 197,
+      name: "Light like Air",
+      price: 1340,
+      image: "/Pics/7.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Camel"
+    },
+    {
+      id: 198,
+      name: "Light like Air",
+      price: 1340,
+      image: "/Pics/8.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Lavender"
+    },
+    {
+      id: 199,
+      name: "Light like Air",
+      price: 1340,
+      image: "/Pics/9.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "White"
     },
     {
-      id: 203,
-      name: "Co-ord Set 13",
-      price: 3499,
-      image: "/Pics/13.JPG",
+      id: 200,
+      name: "Light like Air",
+      price: 1340,
+      image: "/Pics/10.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Beige"
     },
     {
+      id: 201,
+      name: "Mono Floral Print",
+      price: 1083,
+      image: "/Pics/11.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Green"
+    },
+    {
+      id: 202,
+      name: "Mono Floral Print",
+      price: 1083,
+      image: "/Pics/12.JPG",
+      category: "cordsets",
+      sizes: ["Free Size"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Black"
+    },
+    {
+      id: 203,
+      name: "The Cannabis",
+      price: 1908,
+      image: "/Pics/13.JPG",
+      category: "cordsets",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Purple"
+    },
+    {
       id: 204,
-      name: "Co-ord Set 14",
-      price: 3999,
+      name: "The Pipeline",
+      price: 2030,
       image: "/Pics/14.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
+      color: "Purple"
     },
     {
       id: 205,
-      name: "Co-ord Set 15",
-      price: 4299,
+      name: "The Pipeline",
+      price: 2030,
       image: "/Pics/15.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
+      color: "Light Blue"
     },
     {
       id: 206,
-      name: "Co-ord Set 16",
-      price: 4599,
+      name: "Embellished Veins",
+      price: 2030,
       image: "/Pics/16.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
+      color: "Black"
     },
     {
       id: 207,
-      name: "Co-ord Set 17",
-      price: 2499,
+      name: "Embellished Veins",
+      price: 2030,
       image: "/Pics/17.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Brown"
     },
     {
       id: 208,
-      name: "Co-ord Set 18",
-      price: 2699,
+      name: "Embellished Veins",
+      price: 2030,
       image: "/Pics/18.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
+      color: "Red"
     },
-    {
-      id: 209,
-      name: "Co-ord Set 19",
-      price: 2899,
-      image: "/Pics/19.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
-    },
+    // {
+    //   id: 209,
+    //   name: "Love for Thread",
+    //   price: 2899,
+    //   image: "/Pics/19.JPG",
+    //   category: "cordsets",
+    //   sizes: ["XS", "S", "M", "L", "XL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Khaki"
+    // },
     {
       id: 210,
-      name: "Co-ord Set 20",
-      price: 3199,
+      name: "Love for Thread",
+      price: 2016,
       image: "/Pics/20.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
-    },
-    {
-      id: 211,
-      name: "Co-ord Set 21",
-      price: 3499,
-      image: "/Pics/21.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Black"
     },
+    // {
+    //   id: 211,
+    //   name: "Co-ord Set 21",
+    //   price: 3499,
+    //   image: "/Pics/21.JPG",
+    //   category: "cordsets",
+    //   sizes: ["XS", "S", "M", "L", "XL"],
+    //   description: "Stylish coordinated set with matching top and bottom",
+    //   color: "Black"
+    // },
     {
       id: 212,
-      name: "Co-ord Set 22",
-      price: 3999,
+      name: "Love for Thread",
+      price: 2016,
       image: "/Pics/22.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "White"
     },
     {
       id: 213,
-      name: "Co-ord Set 23",
-      price: 4299,
+      name: "Gold me up!",
+      price: 1972,
       image: "/Pics/23.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M - XXXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Blue"
+    },
+    {
+      id: 214,
+      name: "Gold me up!",
+      price: 1972,
+      image: "/Pics/24.JPG",
+      category: "cordsets",
+      sizes: ["M - XXXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Purple"
+    },
+    {
+      id: 215,
+      name: "Summer Hits",
+      price: 1776,
+      image: "/Pics/25.JPG",
+      category: "cordsets",
+      sizes: ["M- XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Beige Green Print"
+    },
+    {
+      id: 216,
+      name: "Amoeba",
+      price: 1972,
+      image: "/Pics/26.JPG",
+      category: "cordsets",
+      sizes: ["M - XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Peacock"
+    },
+    {
+      id: 217,
+      name: "Amoeba",
+      price: 1972,
+      image: "/Pics/27.JPG",
+      category: "cordsets",
+      sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Beige"
     },
     {
-      id: 214,
-      name: "Co-ord Set 24",
-      price: 4599,
-      image: "/Pics/24.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 215,
-      name: "Co-ord Set 25",
-      price: 2499,
-      image: "/Pics/25.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
-    },
-    {
-      id: 216,
-      name: "Co-ord Set 26",
-      price: 2699,
-      image: "/Pics/26.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
-    {
-      id: 217,
-      name: "Co-ord Set 27",
-      price: 2899,
-      image: "/Pics/27.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
-    },
-    {
       id: 218,
-      name: "Co-ord Set 28",
-      price: 3199,
+      name: "The Leaflet",
+      price: 1972,
       image: "/Pics/28.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
+      color: "Black"
     },
     {
       id: 219,
-      name: "Co-ord Set 29",
-      price: 3499,
+      name: "The Leaflet",
+      price: 1972,
       image: "/Pics/29.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
+      color: "White"
     },
     {
       id: 220,
-      name: "Co-ord Set 30",
-      price: 3999,
+      name: "The Leaflet",
+      price: 1972,
       image: "/Pics/30.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
+      color: "Grey"
     },
     {
       id: 221,
-      name: "Co-ord Set 31",
-      price: 4299,
+      name: "The Net Story",
+      price: 2016,
       image: "/Pics/31.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Black"
     },
     {
       id: 222,
-      name: "Co-ord Set 32",
-      price: 4599,
+      name: "Office Time",
+      price: 2268,
       image: "/Pics/32.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "White"
     },
     {
       id: 223,
-      name: "Co-ord Set 33",
-      price: 2499,
+      name: "Office Time",
+      price: 2268,
       image: "/Pics/33.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "Black"
     },
     {
       id: 224,
-      name: "Co-ord Set 34",
-      price: 2699,
+      name: "Office Time",
+      price: 2268,
       image: "/Pics/34.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Cream"
-    },
-    {
-      id: 225,
-      name: "Co-ord Set 35",
-      price: 2899,
-      image: "/Pics/35.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Charcoal"
-    },
-    {
-      id: 226,
-      name: "Co-ord Set 36",
-      price: 3199,
-      image: "/Pics/36.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Stylish coordinated set with matching top and bottom",
-      color: "Olive"
-    },
-    {
-      id: 227,
-      name: "Co-ord Set 37",
-      price: 3499,
-      image: "/Pics/37.JPG",
-      category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
       color: "Brown"
     },
     {
+      id: 225,
+      name: "Satin Supremacy",
+      price: 1892,
+      image: "/Pics/35.JPG",
+      category: "cordsets",
+      sizes: ["M- XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Brown"
+    },
+    {
+      id: 226,
+      name: "Satin Supremacy",
+      price: 1892,
+      image: "/Pics/36.JPG",
+      category: "cordsets",
+      sizes: ["M- XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Peacock Green"
+    },
+    {
+      id: 227,
+      name: "Satin Supremacy",
+      price: 1892,
+      image: "/Pics/37.JPG",
+      category: "cordsets",
+      sizes: ["M- XXL"],
+      description: "Stylish coordinated set with matching top and bottom",
+      color: "Powder Pink"
+    },
+    {
       id: 228,
-      name: "Co-ord Set 38",
-      price: 3999,
+      name: "Satin Supremacy",
+      price: 1892,
       image: "/Pics/38.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
+      color: "Sky Blue"
     },
     {
       id: 229,
-      name: "Co-ord Set 39",
-      price: 4299,
+      name: "Bling it on",
+      price: 1548,
       image: "/Pics/39.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Khaki"
+      color: "Parrot Green"
     },
     {
       id: 230,
-      name: "Co-ord Set 40",
-      price: 4599,
+      name: "Bling it on",
+      price: 1548,
       image: "/Pics/40.JPG",
       category: "cordsets",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Sand"
+      color: "Hot Pink"
     },
     
     

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 import ProductCard from '../components/ProductCard'
@@ -7,9 +7,31 @@ import { products } from '../data/products'
 export default function ShirtsPage() {
   const [sortBy, setSortBy] = useState('popularity')
   const [currentPage, setCurrentPage] = useState(1)
+  const [activeSlide, setActiveSlide] = useState(0)
   const itemsPerPage = 9
 
   const allProducts = products.shirts
+
+  const slideshowItems = useMemo(() => {
+    const unique = new Map()
+    products.shirts.forEach((item) => {
+      const imageSrc = item.image?.startsWith('/') ? item.image : `/${item.image}`
+      if (!unique.has(imageSrc)) {
+        unique.set(imageSrc, { ...item, image: imageSrc })
+      }
+    })
+    return Array.from(unique.values()).slice(0, 7)
+  }, [])
+
+  useEffect(() => {
+    if (slideshowItems.length <= 1) return
+
+    const interval = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slideshowItems.length)
+    }, 5500)
+
+    return () => clearInterval(interval)
+  }, [slideshowItems.length])
 
   const filteredProducts = useMemo(() => [...allProducts], [allProducts])
 
@@ -40,6 +62,49 @@ export default function ShirtsPage() {
 
   return (
     <div className="min-h-screen bg-[#F2D3C5]">
+      <div className="container mx-auto px-4 lg:px-8 py-8">
+        <div className="relative overflow-hidden rounded-[32px] shadow-2xl mb-10">
+          <div className="relative h-[420px] sm:h-[520px] bg-black">
+            {slideshowItems.map((item, index) => (
+              <div
+                key={item.image}
+                className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? 'opacity-100 z-20' : 'opacity-0 z-10'}`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute bottom-8 left-6 right-6 text-white">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/80 backdrop-blur-sm">
+                    Shirts Collection
+                  </div>
+                  <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+                    {item.name}
+                  </h1>
+                  <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/80 leading-relaxed">
+                    {item.description || 'Browse the latest shirts with premium styling and timeless silhouettes.'}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2 z-30">
+            {slideshowItems.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setActiveSlide(index)}
+                className={`h-3 w-3 rounded-full transition-all ${index === activeSlide ? 'bg-white shadow-lg w-8' : 'bg-white/40 hover:bg-white'}`}
+                aria-label={`Show slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 lg:px-8 py-4 border-b border-gray-200">
         <div className="flex items-center gap-2 text-sm text-gray-600">

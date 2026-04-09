@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import HomeSections from './components/HomeSections'
@@ -9,6 +15,17 @@ import NewArrivalsPage from './pages/NewArrivalsPage'
 import JeansPage from './pages/JeansPage'
 import ShirtsPage from './pages/ShirtsPage'
 import CordsPage from './pages/CordsPage'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 })
+  }, [pathname])
+
+  return null
+}
+
 function PageLayout({ children }) {
   return (
     <>
@@ -99,6 +116,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="w-full min-h-screen bg-semwz-peach">
         <AppContent />
       </div>
