@@ -52,6 +52,9 @@ export default function ProductDetailModal({ product, onClose }) {
             {product.name}
           </h2>
           <p className="text-semwz-black/60 text-sm mb-2">{product.color}</p>
+          <p className="text-2xl font-bold text-semwz-black mb-4">
+            ₹{product.price?.toLocaleString()}
+          </p>
           <p className="text-sm text-gray-600 mb-6">{product.description}</p>
 
           {/* Size */}

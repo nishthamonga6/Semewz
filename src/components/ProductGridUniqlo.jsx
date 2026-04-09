@@ -21,6 +21,12 @@ export default function ProductGridUniqlo({ products, title, subtitle, id }) {
 
     // Sort groups
     let sortedGroups = Object.entries(grouped).sort((a, b) => {
+      if (sortBy === 'price-low') {
+        return Math.min(...a[1].map(p => p.price)) - Math.min(...b[1].map(p => p.price))
+      }
+      if (sortBy === 'price-high') {
+        return Math.max(...b[1].map(p => p.price)) - Math.max(...a[1].map(p => p.price))
+      }
       return 0
     }).reduce((acc, [key, value]) => {
       acc[key] = value
@@ -69,6 +75,18 @@ export default function ProductGridUniqlo({ products, title, subtitle, id }) {
                 className="w-full text-left px-3 py-2 hover:bg-gray-50 text-sm text-gray-700 font-medium border-b border-gray-100"
               >
                 Recommended
+              </button>
+              <button
+                onClick={() => setSortBy('price-low')}
+                className="w-full text-left px-3 py-2 hover:bg-gray-50 text-sm text-gray-700 font-medium border-b border-gray-100"
+              >
+                Price: Low to High
+              </button>
+              <button
+                onClick={() => setSortBy('price-high')}
+                className="w-full text-left px-3 py-2 hover:bg-gray-50 text-sm text-gray-700 font-medium"
+              >
+                Price: High to Low
               </button>
             </div>
           </div>

@@ -1,45 +1,6 @@
 export const products = {
   jeans: [
-    {
-      id: 1,
-      name: "Classic Blue Jeans",
-      price: 2499,
-      image: "/Pics/jeans/IMG_2590.JPG",
-      category: "jeans",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Premium denim with a modern fit",
-      color: "Indigo"
-    },
-    {
-      id: 2,
-      name: "Black Slim Jeans",
-      price: 2699,
-      image: "/Pics/jeans/IMG_2591.JPG",
-      category: "jeans",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Premium denim with a modern fit",
-      color: "Black"
-    },
-    {
-      id: 3,
-      name: "Relaxed Fit Jeans",
-      price: 2899,
-      image: "/Pics/jeans/IMG_2592.JPG",
-      category: "jeans",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Premium denim with a modern fit",
-      color: "Blue"
-    },
-    {
-      id: 4,
-      name: "Vintage Straight Jeans",
-      price: 3199,
-      image: "/Pics/jeans/IMG_2593.JPG",
-      category: "jeans",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Premium denim with a modern fit",
-      color: "Navy"
-    },
+    
   ],
   shirts: [
     {
@@ -248,6 +209,183 @@ export const products = {
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
       color: "Light Green"
+    },
+
+    {
+      id: 27,
+      name: "The Solid Bling",
+      image: "/Pics/108.JPG",
+      category: "shirts",
+      sizes: ["M", "XXL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Dark Green"
+    },
+    {
+      id: 28,
+      name: "The Solid Bling",
+      image: "/Pics/109.JPG",
+      category: "shirts",
+      sizes: ["M",  "XXL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Light Green"
+    },
+    {
+      id: 29,
+      name: "Collar Charm",
+      image: "/Pics/110.JPG",
+      category: "shirts",
+      sizes: ["M", "XXL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Green"
+    },
+    {
+      id: 30,
+      name: "Plain Crashed",
+      image: "/Pics/111.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Hot Pink"
+    },
+    {
+      id: 31,
+      name: "Plain Crashed",
+      image: "/Pics/112.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Muave"
+    },
+    {
+      id: 32,
+      name: "Plain Crashed",
+      image: "/Pics/113.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Baby Pink"
+    },
+    {
+      id: 33,
+      name: "Plain Crashed",
+      image: "/Pics/114.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "White"
+    },
+    {
+      id: 34,
+      name: "White Washed",
+      image: "/Pics/116.JPG",
+      category: "shirts",
+      sizes:["M", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "White"
+    },
+    {
+      id: 35,
+      name: "Lemon Slice",
+      image: "/Pics/117.JPG",
+      category: "shirts",
+      sizes: ["Plus Size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Lemon Yellow"
+    },
+     {
+      id: 36,
+      name: "Ivory Threadline",
+      image: "/Pics/73.JPG",
+      category: "shirts",
+      sizes: [ "M", "XXL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Beige"
+    },
+    {
+      id: 37,
+      name: "Guage Black Shirt",
+      image: "/Pics/74.JPG",
+      category: "shirts",
+      sizes: ["L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Black"
+    },
+    {
+      id: 38,
+      name: "Quarter down",
+      image: "/Pics/75.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Dark Blue"
+    },
+    {
+      id: 39,
+      name: "Quarter down",
+      image: "/Pics/76.JPG",
+      category: "shirts",
+      sizes: ["Free size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Brown"
+    },
+    {
+      id: 40,
+      name: "Flora Drift",
+      image: "/Pics/77.JPG",
+      category: "shirts",
+      sizes: ["Free Size"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Cream"
+    },
+    {
+      id: 41,
+      name: "New Arrival 6",
+      price: 2299,
+      image: "/Pics/78.JPG",
+      category: "shirts",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Olive"
+    },
+    {
+      id: 42,
+      name: "New Arrival 7",
+      price: 2499,
+      image: "/Pics/79.JPG",
+      category: "shirts",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Brown"
+    },
+    {
+      id: 43,
+      name: "New Arrival 8",
+      price: 2699,
+      image: "/Pics/80.JPG",
+      category: "shirts",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Navy"
+    },
+    {
+      id: 44,
+      name: "New Arrival 9",
+      price: 2899,
+      image: "/Pics/81.JPG",
+      category: "shirts",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Khaki"
+    },
+    {
+      id: 45,
+      name: "New Arrival 10",
+      price: 3199,
+      image: "/Pics/82.JPG",
+      category: "shirts",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      description: "Latest arrival - fresh styles just landed",
+      color: "Sand"
     },
   ],
   cordsets: [
@@ -973,106 +1111,7 @@ export const products = {
     },
   ],
   new: [
-    {
-      id: 21,
-      name: "New Arrival 1",
-      price: 999,
-      image: "/Pics/73.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Black"
-    },
-    {
-      id: 22,
-      name: "New Arrival 2",
-      price: 1299,
-      image: "/Pics/74.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "White"
-    },
-    {
-      id: 23,
-      name: "New Arrival 3",
-      price: 1599,
-      image: "/Pics/75.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Beige"
-    },
-    {
-      id: 24,
-      name: "New Arrival 4",
-      price: 1799,
-      image: "/Pics/76.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Cream"
-    },
-    {
-      id: 25,
-      name: "New Arrival 5",
-      price: 1999,
-      image: "/Pics/77.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Charcoal"
-    },
-    {
-      id: 26,
-      name: "New Arrival 6",
-      price: 2299,
-      image: "/Pics/78.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Olive"
-    },
-    {
-      id: 27,
-      name: "New Arrival 7",
-      price: 2499,
-      image: "/Pics/79.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
-    },
-    {
-      id: 28,
-      name: "New Arrival 8",
-      price: 2699,
-      image: "/Pics/80.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Navy"
-    },
-    {
-      id: 29,
-      name: "New Arrival 9",
-      price: 2899,
-      image: "/Pics/81.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Khaki"
-    },
-    {
-      id: 30,
-      name: "New Arrival 10",
-      price: 3199,
-      image: "/Pics/82.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Sand"
-    },
+   
     {
       id: 31,
       name: "New Arrival 11",
@@ -1324,144 +1363,31 @@ export const products = {
       color: "Charcoal"
     },
     {
-      id: 56,
-      name: "New Arrival 36",
-      price: 3999,
-      image: "/Pics/108.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Olive"
-    },
-    {
-      id: 57,
-      name: "New Arrival 37",
-      price: 999,
-      image: "/Pics/109.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
-    },
-    {
-      id: 58,
-      name: "New Arrival 38",
-      price: 1299,
-      image: "/Pics/110.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Navy"
-    },
-    {
-      id: 59,
-      name: "New Arrival 39",
-      price: 1599,
-      image: "/Pics/111.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Khaki"
-    },
-    {
-      id: 60,
-      name: "New Arrival 40",
-      price: 1799,
-      image: "/Pics/112.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Sand"
-    },
-    {
-      id: 61,
-      name: "New Arrival 41",
-      price: 1999,
-      image: "/Pics/113.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Black"
-    },
-    {
-      id: 62,
-      name: "New Arrival 42",
-      price: 2299,
-      image: "/Pics/114.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "White"
-    },
-    {
-      id: 63,
-      name: "New Arrival 43",
-      price: 2499,
-      image: "/Pics/115.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Beige"
-    },
-    {
-      id: 64,
-      name: "New Arrival 44",
-      price: 2699,
-      image: "/Pics/116.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Cream"
-    },
-    {
-      id: 65,
-      name: "New Arrival 45",
-      price: 2899,
-      image: "/Pics/117.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Charcoal"
-    },
-    {
       id: 66,
-      name: "New Arrival 46",
-      price: 3199,
+      name: "Dress up Girly",
       image: "/Pics/118.JPG",
       category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Olive"
+      color: "beige"
     },
     {
       id: 67,
-      name: "New Arrival 47",
-      price: 3499,
-      image: "/Pics/119.JPG",
+      name: "Dress up Girly",
+      image: "/Pics/120.JPG",
       category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
+      color: "Ice Blue"
     },
     {
       id: 68,
-      name: "New Arrival 48",
-      price: 3999,
-      image: "/Pics/120.JPG",
-      category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      description: "Latest arrival - fresh styles just landed",
-      color: "Navy"
-    },
-    {
-      id: 69,
-      name: "New Arrival 49",
-      price: 999,
+      name: "Dress up Girly",
       image: "/Pics/121.JPG",
       category: "new",
-      sizes: ["XS", "S", "M", "L", "XL"],
+      sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Khaki"
+      color: "Hot pink"
     },
     
   ],

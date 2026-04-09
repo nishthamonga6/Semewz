@@ -17,6 +17,10 @@ export default function CordsPage() {
   const sortedProducts = useMemo(() => {
     const sorted = [...filteredProducts]
     switch (sortBy) {
+      case 'price-low':
+        return sorted.sort((a, b) => a.price - b.price)
+      case 'price-high':
+        return sorted.sort((a, b) => b.price - a.price)
       case 'newest':
         return sorted.reverse()
       case 'popularity':
@@ -71,7 +75,8 @@ export default function CordsPage() {
                     >
                       <option value="popularity">Popularity</option>
                       <option value="newest">Newest</option>
-
+                      <option value="price-low">Price: Low to High</option>
+                      <option value="price-high">Price: High to Low</option>
                     </select>
                     <ChevronDown size={16} className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-600" />
                   </div>

@@ -34,6 +34,18 @@ function ProductCard({ product }) {
           {product.color}
         </p>
 
+        {product.sizes?.length > 0 && (
+          <p className="text-xs text-gray-600 mb-2">
+            Sizes: {product.sizes.join(', ')}
+          </p>
+        )}
+
+        {product.price != null && (
+          <p className="text-base font-bold text-semwz-black mb-2">
+            ₹{Number(product.price).toLocaleString()}
+          </p>
+        )}
+
         {/* Description */}
         <p className="text-xs text-gray-600 line-clamp-2">
           {product.description}

@@ -67,7 +67,7 @@ export default function Cart() {
                     </h3>
                     <p className="text-xs text-gray-600 mb-2">{item.color}</p>
                     
-                    {/* Size */}
+                    {/* Size and Price */}
                     <div className="flex items-center justify-between mb-3 mt-auto">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-semibold text-gray-700">Size:</span>
@@ -75,6 +75,9 @@ export default function Cart() {
                           {item.size}
                         </span>
                       </div>
+                      <span className="font-bold text-semwz-black">
+                        ₹{(item.price * item.quantity).toLocaleString()}
+                      </span>
                     </div>
 
                     {/* Quantity Controls */}
@@ -126,6 +129,9 @@ export default function Cart() {
                     <span>
                       {item.name.substring(0, 20)}... x {item.quantity}
                     </span>
+                    <span className="font-semibold text-semwz-black">
+                      ₹{(item.price * item.quantity).toLocaleString()}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -135,7 +141,7 @@ export default function Cart() {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-700">Subtotal</span>
                   <span className="font-semibold text-semwz-black">
-                    --
+                    ₹{getTotalPrice().toLocaleString()}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
@@ -145,7 +151,7 @@ export default function Cart() {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-700">Tax</span>
                   <span className="font-semibold text-semwz-black">
-                    --
+                    ₹{Math.round(getTotalPrice() * 0.18).toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -155,24 +161,16 @@ export default function Cart() {
                 <div className="flex justify-between items-center mb-1">
                   <span className="font-bold text-semwz-black text-lg">Total</span>
                   <span className="font-bold text-semwz-black text-lg">
-                    --
+                    ₹{Math.round(getTotalPrice() * 1.18).toLocaleString()}
                   </span>
                 </div>
                 <p className="text-xs text-gray-600">incl. 18% GST</p>
               </div>
 
-              {/* Checkout Button */}
-              <Link
-                to="/checkout"
-                className="w-full py-3 bg-semwz-black text-white font-semibold rounded-lg hover:bg-semwz-black/90 transition-all duration-300 hover:shadow-lg mb-3 inline-block text-center"
-              >
-                Proceed to Checkout
-              </Link>
-
               {/* Continue Shopping */}
               <Link
                 to="/"
-                className="w-full py-3 bg-white border-2 border-semwz-black text-semwz-black font-semibold rounded-lg hover:bg-semwz-peach/50 transition-all duration-300 inline-block text-center"
+                className="w-full py-3 bg-semwz-black text-white font-semibold rounded-lg hover:bg-semwz-black/90 transition-all duration-300 hover:shadow-lg mb-3 inline-block text-center"
               >
                 Continue Shopping
               </Link>
