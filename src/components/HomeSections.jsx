@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
-import ProductCard from './ProductCard'
-import { products } from '../data/products'
+import { Link } from "react-router-dom";
+import ProductCard from "./ProductCard";
+import { products } from "../data/products";
+import { groupProductsByBaseName } from "../utils/helpers";
 
 export default function HomeSections() {
-  const newArrivals = products.new.slice(0, 6)
+  const newArrivals = groupProductsByBaseName(products.new).slice(0, 6);
 
   return (
     <div className="bg-semwz-peach">
@@ -28,7 +29,11 @@ export default function HomeSections() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {newArrivals.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                variants={product.variants}
+              />
             ))}
           </div>
         </div>
@@ -40,25 +45,29 @@ export default function HomeSections() {
           <div className="grid gap-16">
             {[
               {
-                id: 'jeans',
-                title: 'Jeans',
-                subtitle: 'Explore our latest denim styles in every fit.',
-                path: '/jeans',
-                products: products.jeans.slice(0, 3),
+                id: "jeans",
+                title: "Jeans",
+                subtitle: "Explore our latest denim styles in every fit.",
+                path: "/jeans",
+                products: groupProductsByBaseName(products.jeans).slice(0, 3),
               },
               {
-                id: 'shirts',
-                title: 'Shirts',
-                subtitle: 'Fresh shirt drops that make every outfit sharper.',
-                path: '/shirts',
-                products: products.shirts.slice(0, 3),
+                id: "shirts",
+                title: "Shirts",
+                subtitle: "Fresh shirt drops that make every outfit sharper.",
+                path: "/shirts",
+                products: groupProductsByBaseName(products.shirts).slice(0, 3),
               },
               {
-                id: 'cordsets',
-                title: 'Co-ord Sets',
-                subtitle: 'Complete matching sets for an effortless styled look.',
-                path: '/co-ord-sets',
-                products: products.cordsets.slice(0, 3),
+                id: "cordsets",
+                title: "Co-ord Sets",
+                subtitle:
+                  "Complete matching sets for an effortless styled look.",
+                path: "/co-ord-sets",
+                products: groupProductsByBaseName(products.cordsets).slice(
+                  0,
+                  3,
+                ),
               },
             ].map((section) => (
               <div key={section.id} className="space-y-6">
@@ -82,7 +91,11 @@ export default function HomeSections() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {section.products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      variants={product.variants}
+                    />
                   ))}
                 </div>
               </div>
@@ -91,5 +104,5 @@ export default function HomeSections() {
         </div>
       </section>
     </div>
-  )
+  );
 }

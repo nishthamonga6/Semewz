@@ -1,29 +1,30 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
-} from 'react-router-dom'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import HomeSections from './components/HomeSections'
-import Footer from './components/Footer'
-import Search from './components/Search'
-import CategoryPage from './pages/CategoryPage'
-import NewArrivalsPage from './pages/NewArrivalsPage'
-import JeansPage from './pages/JeansPage'
-import ShirtsPage from './pages/ShirtsPage'
-import CordsPage from './pages/CordsPage'
+} from "react-router-dom";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import HomeSections from "./components/HomeSections";
+import Footer from "./components/Footer";
+import Search from "./components/Search";
+import CategoryPage from "./pages/CategoryPage";
+import NewArrivalsPage from "./pages/NewArrivalsPage";
+import JeansPage from "./pages/JeansPage";
+import ShirtsPage from "./pages/ShirtsPage";
+import CordsPage from "./pages/CordsPage";
+import { ProductDetailProvider } from "./context/ProductDetailContext";
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0 })
-  }, [pathname])
+    window.scrollTo({ top: 0, left: 0 });
+  }, [pathname]);
 
-  return null
+  return null;
 }
 
 function PageLayout({ children }) {
@@ -32,7 +33,7 @@ function PageLayout({ children }) {
       <Header />
       {children}
     </>
-  )
+  );
 }
 
 function HomePage() {
@@ -47,7 +48,7 @@ function HomePage() {
       {/* Footer */}
       <Footer />
     </>
-  )
+  );
 }
 
 function AppContent() {
@@ -110,18 +111,20 @@ function AppContent() {
         }
       />
     </Routes>
-  )
+  );
 }
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="w-full min-h-screen bg-semwz-peach">
-        <AppContent />
-      </div>
-    </Router>
-  )
+    <ProductDetailProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="w-full min-h-screen bg-semwz-peach">
+          <AppContent />
+        </div>
+      </Router>
+    </ProductDetailProvider>
+  );
 }
 
-export default App
+export default App;

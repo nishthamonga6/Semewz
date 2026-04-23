@@ -1,16 +1,14 @@
 export const products = {
-  jeans: [
-    
-  ],
+  jeans: [],
   shirts: [
     {
       id: 5,
       name: "Stripe to fit in",
       image: "/Pics/145.JPG",
       category: "shirts",
-      sizes: ["M","XXL"],
+      sizes: ["M", "XXL"],
       description: "A wardrobe essential with refined detailing",
-      color: "Green"
+      color: "Green",
     },
     {
       id: 6,
@@ -19,7 +17,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 7,
@@ -28,7 +26,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 8,
@@ -37,7 +35,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Powder"
+      color: "Powder",
     },
     {
       id: 9,
@@ -46,7 +44,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 1000,
@@ -55,7 +53,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "White"
+      color: "White",
     },
     {
       id: 10,
@@ -64,7 +62,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 11,
@@ -73,7 +71,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "White"
+      color: "White",
     },
     {
       id: 12,
@@ -82,7 +80,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Grren"
+      color: "Grren",
     },
     {
       id: 13,
@@ -91,7 +89,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Powder Blue"
+      color: "Powder Blue",
     },
     {
       id: 14,
@@ -100,7 +98,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 15,
@@ -109,7 +107,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Hot pink"
+      color: "Hot pink",
     },
     {
       id: 16,
@@ -118,7 +116,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Parrot Green"
+      color: "Parrot Green",
     },
     {
       id: 17,
@@ -127,7 +125,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "White"
+      color: "White",
     },
     {
       id: 18,
@@ -136,7 +134,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Sage Green"
+      color: "Sage Green",
     },
     {
       id: 19,
@@ -145,7 +143,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 20,
@@ -154,7 +152,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "White"
+      color: "White",
     },
     {
       id: 21,
@@ -163,7 +161,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 22,
@@ -172,7 +170,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 23,
@@ -181,7 +179,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 24,
@@ -190,7 +188,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Powder Blue"
+      color: "Powder Blue",
     },
     {
       id: 25,
@@ -199,7 +197,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Peach"
+      color: "Peach",
     },
     {
       id: 26,
@@ -208,7 +206,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "A wardrobe essential with refined detailing",
-      color: "Light Green"
+      color: "Light Green",
     },
 
     {
@@ -218,16 +216,16 @@ export const products = {
       category: "shirts",
       sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Dark Green"
+      color: "Dark Green",
     },
     {
       id: 28,
       name: "The Solid Bling",
       image: "/Pics/109.JPG",
       category: "shirts",
-      sizes: ["M",  "XXL"],
+      sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Light Green"
+      color: "Light Green",
     },
     {
       id: 29,
@@ -236,7 +234,7 @@ export const products = {
       category: "shirts",
       sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Green"
+      color: "Green",
     },
     {
       id: 30,
@@ -245,7 +243,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Hot Pink"
+      color: "Hot Pink",
     },
     {
       id: 31,
@@ -254,7 +252,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Muave"
+      color: "Muave",
     },
     {
       id: 32,
@@ -263,7 +261,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Baby Pink"
+      color: "Baby Pink",
     },
     {
       id: 33,
@@ -272,16 +270,16 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "White"
+      color: "White",
     },
     {
       id: 34,
       name: "White Washed",
       image: "/Pics/116.JPG",
       category: "shirts",
-      sizes:["M", "XL"],
+      sizes: ["M", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "White"
+      color: "White",
     },
     {
       id: 35,
@@ -290,16 +288,16 @@ export const products = {
       category: "shirts",
       sizes: ["Plus Size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Lemon Yellow"
+      color: "Lemon Yellow",
     },
-     {
+    {
       id: 36,
       name: "Ivory Threadline",
       image: "/Pics/73.JPG",
       category: "shirts",
-      sizes: [ "M", "XXL"],
+      sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 37,
@@ -308,7 +306,7 @@ export const products = {
       category: "shirts",
       sizes: ["L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 38,
@@ -317,7 +315,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Dark Blue"
+      color: "Dark Blue",
     },
     {
       id: 39,
@@ -326,7 +324,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 40,
@@ -335,7 +333,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free Size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Parrot Green"
+      color: "Parrot Green",
     },
     {
       id: 41,
@@ -344,7 +342,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 42,
@@ -353,7 +351,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 43,
@@ -362,7 +360,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Teal"
+      color: "Teal",
     },
     {
       id: 44,
@@ -371,7 +369,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Peach"
+      color: "Peach",
     },
     {
       id: 45,
@@ -380,7 +378,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Cream"
+      color: "Cream",
     },
     {
       id: 46,
@@ -389,25 +387,25 @@ export const products = {
       category: "shirts",
       sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Dust Pink"
+      color: "Dust Pink",
     },
     {
       id: 47,
       name: "Basic but better",
       image: "/Pics/84.JPG",
       category: "shirts",
-      sizes: ["M",  "XXL"],
+      sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Burgandy"
+      color: "Burgandy",
     },
     {
       id: 48,
       name: "Basic but better",
       image: "/Pics/85.JPG",
       category: "shirts",
-      sizes: ["M","XXL"],
+      sizes: ["M", "XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 49,
@@ -416,7 +414,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 50,
@@ -425,7 +423,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 51,
@@ -434,7 +432,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Rust"
+      color: "Rust",
     },
     {
       id: 52,
@@ -443,7 +441,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - 3XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "White"
+      color: "White",
     },
     {
       id: 53,
@@ -452,7 +450,7 @@ export const products = {
       category: "shirts",
       sizes: ["XS", "S", "M", "L", "XL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Lilac"
+      color: "Lilac",
     },
     {
       id: 54,
@@ -461,7 +459,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 55,
@@ -470,7 +468,7 @@ export const products = {
       category: "shirts",
       sizes: ["M-XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 56,
@@ -479,7 +477,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Grey"
+      color: "Grey",
     },
     {
       id: 57,
@@ -488,7 +486,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL "],
       description: "Latest arrival - fresh styles just landed",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 58,
@@ -497,7 +495,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 59,
@@ -506,7 +504,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 60,
@@ -515,7 +513,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 61,
@@ -524,7 +522,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 62,
@@ -533,7 +531,7 @@ export const products = {
       category: "shirts",
       sizes: ["M- XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Green"
+      color: "Green",
     },
     {
       id: 63,
@@ -542,7 +540,7 @@ export const products = {
       category: "shirts",
       sizes: ["M- XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Pink"
+      color: "Pink",
     },
     {
       id: 64,
@@ -551,7 +549,7 @@ export const products = {
       category: "shirts",
       sizes: ["M- XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Mustard"
+      color: "Mustard",
     },
     {
       id: 65,
@@ -560,7 +558,7 @@ export const products = {
       category: "shirts",
       sizes: ["M- XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Olive Green"
+      color: "Olive Green",
     },
     {
       id: 66,
@@ -569,7 +567,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Orange"
+      color: "Orange",
     },
     {
       id: 67,
@@ -578,7 +576,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Navy Blue"
+      color: "Navy Blue",
     },
     {
       id: 68,
@@ -587,7 +585,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Light Green"
+      color: "Light Green",
     },
     {
       id: 69,
@@ -596,7 +594,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Light Green"
+      color: "Light Green",
     },
     {
       id: 70,
@@ -605,7 +603,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Blood Red"
+      color: "Blood Red",
     },
     {
       id: 71,
@@ -614,7 +612,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Purple"
+      color: "Purple",
     },
     {
       id: 72,
@@ -623,7 +621,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 73,
@@ -632,7 +630,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 74,
@@ -641,7 +639,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 75,
@@ -650,7 +648,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 76,
@@ -659,7 +657,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "Beige",
     },
     // {
     //   id: 77,
@@ -677,7 +675,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy"
+      color: "Navy",
     },
     // {
     //   id: 79,
@@ -722,7 +720,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     // {
     //   id: 84,
@@ -740,7 +738,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Blue"
+      color: "Blue",
     },
     // {
     //   id: 86,
@@ -758,7 +756,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Butter Yellow"
+      color: "Butter Yellow",
     },
     // {
     //   id: 88,
@@ -776,7 +774,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Grey"
+      color: "Grey",
     },
     // {
     //   id: 90,
@@ -794,7 +792,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Silver"
+      color: "Silver",
     },
     // {
     //   id: 92,
@@ -812,10 +810,9 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Pink"
+      color: "Pink",
     },
 
-    
     // {
     //   id: 94,
     //   name: "Co-ord Set 64",
@@ -832,7 +829,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Dark Grey"
+      color: "Dark Grey",
     },
     {
       id: 85,
@@ -841,7 +838,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Butter Yellow"
+      color: "Butter Yellow",
     },
     {
       id: 86,
@@ -850,7 +847,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Navy Blue"
+      color: "Navy Blue",
     },
     {
       id: 87,
@@ -859,7 +856,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     // {
     //   id: 99,
@@ -877,7 +874,7 @@ export const products = {
       category: "shirts",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 89,
@@ -886,7 +883,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Dark Blue"
+      color: "Dark Blue",
     },
 
     {
@@ -896,7 +893,7 @@ export const products = {
       category: "shirts",
       sizes: ["Free size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Light Blue"
+      color: "Light Blue",
     },
   ],
   cordsets: [
@@ -908,7 +905,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 192,
@@ -918,7 +915,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Bottle Green"
+      color: "Bottle Green",
     },
     {
       id: 193,
@@ -928,7 +925,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 194,
@@ -938,7 +935,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Mauve"
+      color: "Mauve",
     },
     {
       id: 195,
@@ -948,7 +945,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Baby Pink"
+      color: "Baby Pink",
     },
     {
       id: 196,
@@ -958,7 +955,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Green"
+      color: "Green",
     },
     {
       id: 197,
@@ -968,7 +965,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Camel"
+      color: "Camel",
     },
     {
       id: 198,
@@ -978,7 +975,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Lavender"
+      color: "Lavender",
     },
     {
       id: 199,
@@ -988,7 +985,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 200,
@@ -998,7 +995,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 201,
@@ -1008,7 +1005,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Green"
+      color: "Green",
     },
     {
       id: 202,
@@ -1018,7 +1015,7 @@ export const products = {
       category: "cordsets",
       sizes: ["Free Size"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 203,
@@ -1028,7 +1025,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Purple"
+      color: "Purple",
     },
     {
       id: 204,
@@ -1038,7 +1035,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Purple"
+      color: "Purple",
     },
     {
       id: 205,
@@ -1048,7 +1045,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Light Blue"
+      color: "Light Blue",
     },
     {
       id: 206,
@@ -1058,7 +1055,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 207,
@@ -1068,7 +1065,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 208,
@@ -1078,7 +1075,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Red"
+      color: "Red",
     },
     // {
     //   id: 209,
@@ -1098,7 +1095,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     // {
     //   id: 211,
@@ -1118,7 +1115,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 213,
@@ -1128,7 +1125,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Blue"
+      color: "Blue",
     },
     {
       id: 214,
@@ -1138,7 +1135,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Purple"
+      color: "Purple",
     },
     {
       id: 215,
@@ -1148,7 +1145,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige Green Print"
+      color: "Beige Green Print",
     },
     {
       id: 216,
@@ -1158,7 +1155,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Peacock"
+      color: "Peacock",
     },
     {
       id: 217,
@@ -1168,7 +1165,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M - XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Beige"
+      color: "Beige",
     },
     {
       id: 218,
@@ -1178,7 +1175,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 219,
@@ -1188,7 +1185,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 220,
@@ -1198,7 +1195,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Grey"
+      color: "Grey",
     },
     {
       id: 221,
@@ -1208,7 +1205,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 222,
@@ -1218,7 +1215,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "White"
+      color: "White",
     },
     {
       id: 223,
@@ -1228,7 +1225,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Black"
+      color: "Black",
     },
     {
       id: 224,
@@ -1238,7 +1235,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 225,
@@ -1248,7 +1245,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Brown"
+      color: "Brown",
     },
     {
       id: 226,
@@ -1258,7 +1255,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Peacock Green"
+      color: "Peacock Green",
     },
     {
       id: 227,
@@ -1268,7 +1265,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Powder Pink"
+      color: "Powder Pink",
     },
     {
       id: 228,
@@ -1278,7 +1275,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Sky Blue"
+      color: "Sky Blue",
     },
     {
       id: 229,
@@ -1288,7 +1285,7 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Parrot Green"
+      color: "Parrot Green",
     },
     {
       id: 230,
@@ -1298,14 +1295,10 @@ export const products = {
       category: "cordsets",
       sizes: ["M- XXL"],
       description: "Stylish coordinated set with matching top and bottom",
-      color: "Hot Pink"
+      color: "Hot Pink",
     },
-    
-    
   ],
   new: [
-   
-    
     {
       id: 1001,
       name: "Dress up Girly",
@@ -1313,7 +1306,7 @@ export const products = {
       category: "new",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "beige"
+      color: "beige",
     },
     {
       id: 1002,
@@ -1322,7 +1315,7 @@ export const products = {
       category: "new",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Ice Blue"
+      color: "Ice Blue",
     },
     {
       id: 1003,
@@ -1331,9 +1324,8 @@ export const products = {
       category: "new",
       sizes: ["Free size"],
       description: "Latest arrival - fresh styles just landed",
-      color: "Hot pink"
+      color: "Hot pink",
     },
-    
   ],
 };
 
@@ -1341,5 +1333,5 @@ export const allProducts = [
   ...products.jeans,
   ...products.shirts,
   ...products.cordsets,
-  ...products.new
+  ...products.new,
 ];
