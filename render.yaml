@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: semewz-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      # Comma-separated list, e.g. "https://semewz-web.onrender.com"
+      - key: CORS_ORIGINS
+        sync: false
+
+  - type: web
+    name: semewz-web
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      # Set this to your API service URL, e.g. "https://semwz-api.onrender.com"
+      - key: VITE_API_URL
+        sync: false
+    routes:
+      # React Router SPA support
+      - type: rewrite
+        source: /*
+        destination: /index.html
