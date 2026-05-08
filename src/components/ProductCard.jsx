@@ -65,7 +65,7 @@ function ProductCard({ product, variants = [] }) {
             loading="lazy"
             decoding="async"
             onError={(e) => {
-              e.target.src =
+              e.currentTarget.src =
                 "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=500&fit=crop";
             }}
           />

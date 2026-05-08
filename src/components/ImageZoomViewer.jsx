@@ -140,7 +140,7 @@ export default function ImageZoomViewer({
             transformOrigin: "center",
           }}
           onError={(e) => {
-            e.target.src =
+            e.currentTarget.src =
               "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&h=800&fit=crop";
           }}
         />
