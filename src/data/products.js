@@ -1755,7 +1755,7 @@ export const products = {
     {
       id: 3002,
       name: "Korean Pants",
-      image: "/Pics/230.HEIC",
+      image: "/Pics/230.JPG",
       category: "Trouser",
       description: "Straight Fit pant style with Korean Fabric",
       color: "White and Black",
@@ -1763,7 +1763,7 @@ export const products = {
     {
       id: 3003,
       name: "Wide Leg Korean  Trouser",
-      image: "/Pics/231.HEIC",
+      image: "/Pics/231.JPG",
       category: "Trouser",
       description: "Korean Style trouser",
       color: "White",
