@@ -38,7 +38,7 @@ export const products = {
       category: "jeans",
       description: "Stretch at its most,hugs your body,wideleg fit.",
       viewLabel: "Close-up",
-      colors: ["YBlack", "Dark blue", "Light Blue"],
+      colors: ["Black", "Dark blue", "Light Blue"],
     },
     {
       id: 993,
@@ -47,7 +47,7 @@ export const products = {
       category: "jeans",
       description: "Stretch at its most,hugs your body,wideleg fit.",
       viewLabel: "Close-up",
-      colors: ["YBlack", "Dark blue", "Light Blue"],
+      colors: ["Black", "Dark blue", "Light Blue"],
     },
     {
       id: 992,

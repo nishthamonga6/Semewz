@@ -120,6 +120,9 @@ export default function Header() {
                 placeholder="Search products..."
                 className="bg-transparent text-xs focus:outline-none flex-1 text-semwz-black placeholder-semwz-black/40"
               />
+              <button type="submit" className="text-xs font-semibold text-semwz-black/70 px-2 py-1 rounded-md hover:bg-semwz-black/5 transition">
+                Go
+              </button>
             </form>
 
             <Link to="/" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-semwz-black">

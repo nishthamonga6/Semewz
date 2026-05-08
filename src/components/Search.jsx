@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useSearchParams, useNavigate } from 'react-router-dom'
-import { Search as SearchIcon, ArrowLeft } from 'lucide-react'
+import { Link, useSearchParams } from 'react-router-dom'
+import { Search as SearchIcon } from 'lucide-react'
 import ProductCard from './ProductCard'
 import { products } from '../data/products'
 
 export default function Search() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const navigate = useNavigate()
   const query = searchParams.get('q') || ''
   const [localQuery, setLocalQuery] = useState(query)
 
@@ -27,16 +26,18 @@ export default function Search() {
     ...products.nightwear,
   ]
 
-  const filteredProducts = allProducts.filter(product => {
-    const searchLower = query.toLowerCase()
-    return (
-      product.name.toLowerCase().includes(searchLower) ||
-      (product.color?.toLowerCase() ?? "").includes(searchLower) ||
-      (product.viewLabel?.toLowerCase() ?? "").includes(searchLower) ||
-      product.category.toLowerCase().includes(searchLower) ||
-      product.description.toLowerCase().includes(searchLower)
-    )
-  })
+  const filteredProducts = query.trim()
+    ? allProducts.filter(product => {
+        const searchLower = query.toLowerCase()
+        return (
+          product.name.toLowerCase().includes(searchLower) ||
+          (product.color?.toLowerCase() ?? "").includes(searchLower) ||
+          (product.viewLabel?.toLowerCase() ?? "").includes(searchLower) ||
+          (product.category?.toLowerCase() ?? "").includes(searchLower) ||
+          (product.description?.toLowerCase() ?? "").includes(searchLower)
+        )
+      })
+    : []
 
   const handleSearch = (e) => {
     e.preventDefault()
