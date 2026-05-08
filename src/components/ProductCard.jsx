@@ -46,6 +46,13 @@ function ProductCard({ product, variants = [] }) {
     }
   };
 
+  const imageSrc =
+    typeof product?.image === "string" && product.image.length > 0
+      ? product.image.startsWith("/")
+        ? product.image
+        : `/${product.image}`
+      : "";
+
   return (
     <div
       role="button"
@@ -59,12 +66,14 @@ function ProductCard({ product, variants = [] }) {
       <div className="product-image-wrapper relative overflow-hidden bg-gray-100 group">
         <div className="product-image-frame">
           <img
-            src={product.image}
+            src={imageSrc}
             alt={product.name}
             className="product-image"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             onError={(e) => {
+              // avoid infinite loop if fallback also fails
+              e.currentTarget.onerror = null;
               e.currentTarget.src =
                 "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=400&h=500&fit=crop";
             }}
