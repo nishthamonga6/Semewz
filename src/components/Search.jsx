@@ -24,6 +24,7 @@ export default function Search() {
     ...products.trousers,
     ...products.skirts,
     ...products.dresses,
+    ...products.nightwear,
   ]
 
   const filteredProducts = allProducts.filter(product => {

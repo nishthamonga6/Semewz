@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function ImageZoomViewer({ src, alt, className = "" }) {
+export default function ImageZoomViewer({
+  src,
+  alt,
+  className = "",
+  fit = "contain",
+}) {
   const [zoom, setZoom] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -27,7 +32,7 @@ export default function ImageZoomViewer({ src, alt, className = "" }) {
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY,
       );
-      setDragStart({ ...dragStart, distance });
+      setDragStart((prev) => ({ ...prev, distance }));
     } else if (e.touches.length === 1) {
       setIsDragging(true);
       setDragStart({
@@ -50,7 +55,7 @@ export default function ImageZoomViewer({ src, alt, className = "" }) {
           Math.min(MAX_ZOOM, zoom + delta * 0.01),
         );
         setZoom(newZoom);
-        setDragStart({ ...dragStart, distance });
+        setDragStart((prev) => ({ ...prev, distance }));
       }
     } else if (isDragging && zoom > 1) {
       setPosition({
@@ -59,6 +64,14 @@ export default function ImageZoomViewer({ src, alt, className = "" }) {
       });
     }
   };
+
+  // Reset on new image (or when swapping variant photos)
+  useEffect(() => {
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
+    setIsDragging(false);
+    setDragStart({ x: 0, y: 0 });
+  }, [src]);
 
   // Handle mouse drag to pan
   const handleMouseDown = (e) => {
@@ -91,12 +104,16 @@ export default function ImageZoomViewer({ src, alt, className = "" }) {
       const maxX = (image.offsetWidth * zoom - container.offsetWidth) / 2;
       const maxY = (image.offsetHeight * zoom - container.offsetHeight) / 2;
 
-      setPosition({
-        x: Math.max(-maxX, Math.min(maxX, position.x)),
-        y: Math.max(-maxY, Math.min(maxY, position.y)),
-      });
+      const nextX = Math.max(-maxX, Math.min(maxX, position.x));
+      const nextY = Math.max(-maxY, Math.min(maxY, position.y));
+      if (nextX !== position.x || nextY !== position.y) {
+        setPosition({ x: nextX, y: nextY });
+      }
     }
-  }, [zoom]);
+  }, [zoom, position.x, position.y]);
+
+  const objectFitClass =
+    fit === "cover" ? "object-cover" : "object-contain";
 
   return (
     <div className="relative w-full h-full bg-gray-100">
@@ -117,7 +134,7 @@ export default function ImageZoomViewer({ src, alt, className = "" }) {
           ref={imageRef}
           src={src}
           alt={alt}
-          className="w-full h-full object-cover transition-transform duration-200"
+          className={`w-full h-full ${objectFitClass} transition-transform duration-200 select-none`}
           style={{
             transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
             transformOrigin: "center",

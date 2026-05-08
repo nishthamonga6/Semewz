@@ -1,10 +1,16 @@
 import { memo } from "react";
+import { MessageCircle } from "lucide-react";
 import { useProductDetail } from "../context/ProductDetailContext";
 import { variantsArePhotoViews } from "../utils/helpers";
 
 function ProductCard({ product, variants = [] }) {
   const { openProduct } = useProductDetail();
-  const productVariants = variants.length > 0 ? variants : [product];
+  const productVariants =
+    variants?.length > 0
+      ? variants
+      : Array.isArray(product?.variants) && product.variants.length > 0
+        ? product.variants
+        : [product];
   const photoViews = variantsArePhotoViews(productVariants);
   const displayColor =
     productVariants.length > 1
@@ -20,12 +26,34 @@ function ProductCard({ product, variants = [] }) {
     });
   };
 
+  const WHATSAPP_PHONE = "919812594125"; // 91 + 9812594125 => +919812594125
+  const whatsappMessage = [
+    `Hi SEMWZ! I want to order: ${product?.name ?? ""}`,
+    product?.sizes?.length ? `Sizes: ${product.sizes.join(", ")}` : null,
+    displayColor ? `Details: ${displayColor}` : null,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
+    whatsappMessage,
+  )}`;
+
+  const onCardKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleOpen();
+    }
+  };
+
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={handleOpen}
       className="group product-card text-left rounded-2xl overflow-hidden bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-semwz-black"
       aria-label={`View ${product.name} details`}
+      onKeyDown={onCardKeyDown}
     >
       {/* Image Container */}
       <div className="product-image-wrapper relative overflow-hidden bg-gray-100 group">
@@ -49,6 +77,18 @@ function ProductCard({ product, variants = [] }) {
             NEW
           </div>
         )}
+
+        {/* WhatsApp order shortcut (must not open product modal) */}
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Order ${product.name} on WhatsApp`}
+          className="absolute top-4 right-4 z-10 inline-flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-semwz-black shadow-sm w-10 h-10 transition"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <MessageCircle size={18} />
+        </a>
       </div>
 
       {/* Product Info */}
@@ -78,7 +118,7 @@ function ProductCard({ product, variants = [] }) {
           {product.description}
         </p>
       </div>
-    </button>
+    </div>
   );
 }
 

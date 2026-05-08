@@ -25,6 +25,7 @@ export default function Footer() {
               <li><Link to="/trousers" className="hover:text-white transition">Trousers</Link></li>
               <li><Link to="/skirts" className="hover:text-white transition">Skirts</Link></li>
               <li><Link to="/dresses" className="hover:text-white transition">Dresses</Link></li>
+              <li><Link to="/night-wear" className="hover:text-white transition">Night Wear</Link></li>
             </ul>
           </div>
 

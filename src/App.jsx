@@ -127,6 +127,14 @@ function AppContent() {
         }
       />
       <Route
+        path="/night-wear"
+        element={
+          <PageLayout>
+            <CategoryPage staticSlug="night-wear" />
+          </PageLayout>
+        }
+      />
+      <Route
         path="/search"
         element={
           <PageLayout>

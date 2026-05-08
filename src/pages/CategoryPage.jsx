@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import ProductGrid from '../components/ProductGrid'
 import { products } from '../data/products'
+import { groupProductsByBaseName } from '../utils/helpers'
 
 const map = {
   'new-arrivals': { items: products.new, title: 'New Arrivals', subtitle: "Fresh pieces just dropped — explore what's new this season" },
@@ -11,6 +12,7 @@ const map = {
   'trousers': { items: products.trousers, title: 'Trousers', subtitle: 'Tailored and relaxed trouser silhouettes for everyday styling' },
   'skirts': { items: products.skirts, title: 'Skirts', subtitle: 'From flowy to structured skirts, ready for every mood and moment' },
   'dresses': { items: products.dresses, title: 'Dresses', subtitle: 'Easy statement dresses designed for comfort and confidence' },
+  'night-wear': { items: products.nightwear, title: 'Night Wear', subtitle: 'Comfortable nightwear styles for every evening' },
 }
 
 export default function CategoryPage({ staticSlug }) {
@@ -28,9 +30,20 @@ export default function CategoryPage({ staticSlug }) {
     )
   }
 
+  const groupedProducts = useMemo(
+    () => groupProductsByBaseName(entry.items || []),
+    // entry changes when slug changes
+    [slug],
+  )
+
   return (
     <div>
-      <ProductGrid products={entry.items} title={entry.title} subtitle={entry.subtitle} id={slug} />
+      <ProductGrid
+        products={groupedProducts}
+        title={entry.title}
+        subtitle={entry.subtitle}
+        id={slug}
+      />
     </div>
   )
 }

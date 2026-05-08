@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Ruler } from "lucide-react";
+import { X, Ruler, Maximize2 } from "lucide-react";
 import ImageZoomViewer from "./ImageZoomViewer";
 import { variantsArePhotoViews } from "../utils/helpers";
 
@@ -37,6 +37,7 @@ export default function ProductDetailModal({ product, onClose }) {
     variants[0]?.sizes?.[0] || "",
   );
   const [showSizeChart, setShowSizeChart] = useState(false);
+  const [fullScreenSrc, setFullScreenSrc] = useState(null);
 
   useEffect(() => {
     const firstVariant = variants[0] || product;
@@ -44,12 +45,25 @@ export default function ProductDetailModal({ product, onClose }) {
     setSelectedSize(firstVariant?.sizes?.[0] || "");
   }, [product]);
 
+  useEffect(() => {
+    if (!fullScreenSrc) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setFullScreenSrc(null);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [fullScreenSrc]);
+
   if (!product) return null;
 
   const availableSizes = selectedVariant?.sizes || [];
   const allSizes = Array.from(
     new Set(variants.flatMap((item) => item.sizes || [])),
   );
+
+  const modalImageSrc = selectedVariant?.image || product.image;
 
   return (
     <div
@@ -74,11 +88,21 @@ export default function ProductDetailModal({ product, onClose }) {
         </button>
 
         {/* Image with Zoom */}
-        <div className="lg:w-1/2 aspect-[3/4] bg-gray-100 flex-shrink-0">
+        <div className="lg:w-1/2 aspect-[3/4] bg-gray-100 flex-shrink-0 relative">
           <ImageZoomViewer
-            src={selectedVariant?.image || product.image}
+            src={modalImageSrc}
             alt={product.name}
           />
+
+          {/* Full-screen image shortcut */}
+          <button
+            type="button"
+            onClick={() => setFullScreenSrc(modalImageSrc)}
+            className="absolute top-4 right-4 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg transition"
+            aria-label="View image full screen"
+          >
+            <Maximize2 size={18} className="text-semwz-black" />
+          </button>
         </div>
 
         {/* Content */}
@@ -204,6 +228,32 @@ export default function ProductDetailModal({ product, onClose }) {
           )}
         </div>
       </div>
+
+      {/* Full-screen image overlay */}
+      {fullScreenSrc && (
+        <div
+          className="fixed inset-0 z-[200] bg-black flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setFullScreenSrc(null)}
+            className="absolute top-4 right-4 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg transition"
+            aria-label="Close full-screen image"
+          >
+            <X size={18} className="text-semwz-black" />
+          </button>
+
+          <div className="w-full h-full">
+            <ImageZoomViewer
+              src={fullScreenSrc}
+              alt={product.name}
+              className="bg-black"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -25,6 +25,7 @@ export default function Header() {
     { id: 'trousers', label: 'Trousers', path: '/trousers' },
     { id: 'skirts', label: 'Skirts', path: '/skirts' },
     { id: 'dresses', label: 'Dresses', path: '/dresses' },
+    { id: 'night-wear', label: 'Night Wear', path: '/night-wear' },
   ]
 
   const sectionMap = {
@@ -35,6 +36,7 @@ export default function Header() {
     trousers: '/trousers',
     skirts: '/skirts',
     dresses: '/dresses',
+    'night-wear': '/night-wear',
   }
 
   const handleCategoryClick = (id) => {

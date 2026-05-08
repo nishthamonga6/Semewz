@@ -3,6 +3,24 @@ import ProductCard from './ProductCard'
 export default function ProductGrid({ products, title, subtitle, id }) {
   const sectionId = id || (title ? title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '') : undefined)
 
+  if (!Array.isArray(products) || products.length === 0) {
+    return (
+      <section id={sectionId} className="py-12 lg:py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          {title && (
+            <div className="mb-12 lg:mb-16 text-center">
+              <h2 className="section-heading text-semwz-black mb-3">{title}</h2>
+              {subtitle && <p className="section-subtitle">{subtitle}</p>}
+            </div>
+          )}
+          <div className="text-center py-16 text-semwz-black/60">
+            No products available yet.
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id={sectionId} className="py-12 lg:py-16">
       <div className="container mx-auto px-4 lg:px-8">
