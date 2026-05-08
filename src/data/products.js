@@ -1737,17 +1737,9 @@ export const products = {
   ],
   trousers: [
     {
-      id: 3000,
-      name: "Wrap it up",
-      image: "/Pics/178.jpeg",
-      category: "Trouser",
-      description: "Korean Wrap trouser",
-      color: "Hot Pink",
-    },
-    {
       id: 3001,
       name: "Double button Korean",
-      image: "/Pics/229.jpeg",
+      image: "/Pics/229.JPG",
       category: "Trouser",
       description: "Black Korean Fabric trouser with double button",
       color: "Black",
